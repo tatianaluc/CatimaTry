@@ -377,6 +377,13 @@ public class MainActivity extends CatimaAppCompatActivity implements LoyaltyCard
         });
         addButton.bringToFront();
 
+        // New button activity added by Tatiana
+        binding.btnCount.setOnClickListener(v -> {
+            int total = DBHelper.getLoyaltyCardCount(mDatabase);
+            Toast.makeText(MainActivity.this, "Card Counter: " + total, Toast.LENGTH_SHORT).show();
+        });
+        binding.btnCount.bringToFront();
+
         var layoutManager = (GridLayoutManager) mCardList.getLayoutManager();
         if (layoutManager != null) {
             var settings = new Settings(this);
