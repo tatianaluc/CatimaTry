@@ -672,6 +672,19 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
 
         loyaltyCardGroups = DBHelper.getLoyaltyCardGroups(database, loyaltyCardId);
 
+        //new textview activity made by Tatiana, to show the group owner of the card
+        //instantly and without clicking on the i.
+        if (loyaltyCardGroups.isEmpty()) {
+            binding.groupOwnerText.setVisibility(View.GONE);
+        } else {
+            List<String> groupName= new ArrayList<>();
+            for (Group group : loyaltyCardGroups) {
+                groupName.add(group._id);
+            }
+            binding.groupOwnerText.setText("Group: " + TextUtils.join(", ", groupName));
+            binding.groupOwnerText.setVisibility(View.VISIBLE);
+        }
+
         showHideElementsForScreenSize();
 
         format = loyaltyCard.barcodeType;
