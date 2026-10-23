@@ -74,10 +74,6 @@ public class Settings {
         return getBoolean(R.string.settings_key_display_barcode_max_brightness, true);
     }
 
-    public String getCardViewOrientation() {
-        return getString(R.string.settings_key_card_orientation, getResString(R.string.settings_key_follow_system_orientation));
-    }
-
     public boolean getKeepScreenOn() {
         return getBoolean(R.string.settings_key_keep_screen_on, true);
     }
@@ -86,16 +82,16 @@ public class Settings {
         return getBoolean(R.string.settings_key_disable_lockscreen_while_viewing_card, true);
     }
 
+    public boolean getDisableNfcWhileViewingCard() {
+        return getBoolean(R.string.settings_key_disable_nfc_while_viewing_card, true);
+    }
+
     public boolean getAllowContentProviderRead() {
         return getBoolean(R.string.settings_key_allow_content_provider_read, true);
     }
 
     public boolean getOledDark() {
         return getBoolean(R.string.settings_key_oled_dark, false);
-    }
-
-    public String getColor() {
-        return getString(R.string.setting_key_theme_color, mContext.getResources().getString(R.string.settings_key_system_theme));
     }
 
     public int getPreferredColumnCount() {
@@ -115,5 +111,9 @@ public class Settings {
 
     public boolean useVolumeKeysForNavigation() {
         return getBoolean(R.string.settings_key_use_volume_keys_navigation, false);
+    }
+
+    public boolean getWearSyncEnabled() {
+        return getBoolean(R.string.settings_key_wear_sync, false);
     }
 }

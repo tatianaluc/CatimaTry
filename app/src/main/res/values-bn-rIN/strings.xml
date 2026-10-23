@@ -3,13 +3,13 @@
     <string name="save">সংরক্ষণ</string>
     <string name="cancel">বাতিল</string>
     <string name="unstar">তারা মুক্ত</string>
-    <string name="star">তারা</string>
-    <string name="barcodeType">বারকোড ধরন</string>
-    <string name="note">বিঃদ্রঃ</string>
-    <string name="storeName">দোকানের নাম</string>
+    <string name="star">পছন্দের তালিকায় যোগ করুন</string>
+    <string name="barcodeType">বারকোডের ধরন</string>
+    <string name="note">উল্লেখ্য</string>
+    <string name="storeName">নাম</string>
     <string name="noMatchingGiftCards">কোনো ফলাফল পাওয়া যায়নি। অনুসন্ধানের বাক্যটি বদলে দেখুন।</string>
     <string name="noGiftCards">প্লাস বোতামটি টিপে একটি কার্ড যোগ করুন বা ⋮ মেনু থেকে কিছু নিয়ে আসুন।</string>
-    <string name="action_add">কর্ম যোগ</string>
+    <string name="action_add">যোগ করুন</string>
     <string name="all">সব</string>
     <string name="noGroupCards">এই গ্রুপটি খালি</string>
     <string name="noGroups">+ যোগ বোতামটি টিপে গ্রুপ যোগ করুন যাতে তাদের শ্রেণীকরণ করা যায়।</string>
@@ -26,7 +26,6 @@
     <string name="starImage">তারা ছবি</string>
     <string name="importCatima">ক্যাতিনা আগম</string>
     <string name="importLoyaltyCardKeychain">আমদানি লয়্যালটি কার্ড কীচেন</string>
-    <string name="importStocard">স্টো কার্ড আমদানি করুন</string>
     <string name="importVoucherVault">আমদানি ভাউচার ভল্ট</string>
     <string name="barcodeId">বারকোড আইডি</string>
     <string name="sameAsCardId">আইডি আর এটা এক</string>
@@ -51,15 +50,6 @@
     <string name="turn_flashlight_off">টর্চলাইট বন্ধ করুন</string>
     <string name="settings_locale">লোকেল</string>
     <string name="settings_system_locale">সিস্টেম লোকেল</string>
-    <string name="settings_theme_color">থিম রঙ</string>
-    <string name="settings_catima_theme">কটিমা থিম</string>
-    <string name="settings_pink_theme">গোলাপী থিম</string>
-    <string name="settings_magenta_theme">ম্যাজেন্টা থিম</string>
-    <string name="settings_violet_theme">ভায়োলেট থিম</string>
-    <string name="settings_blue_theme">নীল থিম</string>
-    <string name="settings_sky_blue_theme">আকাশী নীল থিম</string>
-    <string name="settings_green_theme">সবুজ থিম</string>
-    <string name="settings_brown_theme">বাদামী থিম</string>
     <string name="sort">সাজান</string>
     <string name="sort_by_name">নামের দ্বারা সাজান</string>
     <string name="sort_by_most_recently_used">সর্বাধিক সম্প্রতি ব্যবহৃত দ্বারা সাজান</string>
@@ -85,14 +75,12 @@
     <string name="ok">ঠিক আছে</string>
     <string name="about">সম্পর্কিত</string>
     <string name="debug_version_fmt">সংস্করণ: <xliff:g id="version">%s</xliff:g></string>
-    <string name="importOptionApplicationButton">অন্য অ্যাপ ব্যাবহার করুন</string>
     <string name="moveUp">উপরে উঠান</string>
     <string name="moveDown">নিচে নামান</string>
     <string name="expiryDate">মেয়াদোত্তীর্ণ তারিখ</string>
     <string name="noBarcodeFound">কোনো বারকোড পাওয়া যায়নি</string>
     <string name="cameraPermissionRequired">এই কাজটির জন্য ক্যামেরা ব্যবহার করার অনুমতি লাগবে…</string>
     <string name="noCameraPermissionDirectToSystemSetting">বারকোড স্ক্যান করার জন্য, Catima কে ক্যামেরাটি ব্যবহার করার অনুমতি দিতে হবে। এইখানে টাচ করে আপনার অনুমতি সেটিংস পালটে নিন।</string>
-    <string name="importOptionApplicationExplanation">একটি ফাইল খোলার জন্য যেকোনো অ্যাপ বা আপনার প্রিয় ফাইল ম্যানেজারটি ব্যবহার করুন।</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">মেধাস্বত্ব © 2019–<xliff:g>%d</xliff:g> Sylvia van Os</string>
     <string name="app_license">কপিলেফট দ্বারা রক্ষা করা মুক্ত সফটওয়্যার, লাইসেন্স করা GPLv3+ এর অধীনে</string>
     <plurals name="deleteCardsConfirmation">
@@ -113,9 +101,6 @@
     <string name="about_title_fmt"><xliff:g id="app_name">%s</xliff:g>টির সম্পর্কে</string>
     <string name="app_resources">মুক্ত সম্পদ যেগুলি আমার নয়: <xliff:g id="app_resources_list">%s</xliff:g></string>
     <string name="thumbnailDescription">থাম্বনেইল</string>
-    <string name="settings_card_orientation">বারকোড অভিমুখ</string>
-    <string name="settings_follow_system_orientation">সিস্টেমের অনুসারে</string>
-    <string name="settings_portrait_orientation">প্রতিকৃতি</string>
     <string name="barcodeImageDescriptionWithType">ছবি <xliff:g>%s</xliff:g> বারকোড</string>
     <string name="exportName">রপ্তানি</string>
     <string name="failedParsingImportUriError">আমদানির URI-টি বোঝা যাচ্ছে না</string>
@@ -136,14 +121,11 @@
     <string name="exportOptionExplanation">ডেটাটি আপনার পছন্দের জায়গায় রাখা হবে।</string>
     <string name="importOptionFilesystemTitle">স্টোরেজ থেকে আমদানি করুন</string>
     <string name="importOptionFilesystemButton">স্টোরেজ থেকে</string>
-    <string name="importOptionApplicationTitle">অন্য অ্যাপ ব্যবহার করুন</string>
     <string name="app_copyright_old">Loyalty Card Keychain এর উপর ভিত্তি করে
 \nমেধাস্বত্ব © 2016–2020 Branden Archer</string>
     <string name="selectBarcodeTitle">বারকোড নির্বাচন করুন</string>
     <string name="settings">সেটিংস</string>
     <string name="settings_dark_theme">অন্ধকার</string>
-    <string name="settings_landscape_orientation">অনুভূমিক</string>
-    <string name="settings_lock_on_opening_orientation">কার্ড খোলার সময় যে অভিমুখ থাকে সেটিতে লক করে দেবেন</string>
     <string name="group_name_already_in_use">গ্রুপটির নাম আগে একবার ব্যবহার করে ফেলেছেন</string>
     <string name="group_edit">গ্রুপ সম্পাদনা করুন</string>
     <string name="group_updated">গ্রুপটি আপডেট করা হল</string>
@@ -206,14 +188,11 @@
 \nআপনার FidMe প্রোফাইল থেকে ডেটা সুরক্ষা নির্বাচন করে এবং তারপর প্রথমে আমার ডেটা বের করুন টিপে এটি তৈরি করুন।</string>
     <string name="importCatimaMessage">ক্যাটিমা থেকে আমদানি করতে আপনার <i>catima.zip</i> রপ্তানি নির্বাচন করুন।
 \nঅন্য Catima অ্যাপের আমদানি/রপ্তানি মেনু থেকে প্রথমে সেখানে রপ্তানি টিপে এটি তৈরি করুন।</string>
-    <string name="importStocardMessage">আমদানি করতে Stocard থেকে আপনার <i>***.zip</i> এক্সপোর্ট নির্বাচন করুন।
-\nআপনার ডেটা রপ্তানির জন্য জিজ্ঞাসা করে support@stocardapp.com ই-মেইল করে এটি পান।</string>
     <string name="importVoucherVaultMessage">আমদানি করতে ভাউচার ভল্ট থেকে আপনার <i>vouchervault.json</i> এক্সপোর্ট নির্বাচন করুন।
 \nপ্রথমে ভাউচার ভল্টে এক্সপোর্ট টিপে এটি তৈরি করুন।</string>
     <string name="settings_oled_dark">অন্ধকার থিমের জন্য খাঁটি কালো পটভূমি</string>
     <string name="setIcon">আইকন সেট করুন</string>
     <string name="updateBalance">ব্যালেন্স আপডেট করুন</string>
-    <string name="barcodeLongPressMessage">গ্যালারি অ্যাপে শুধুমাত্র ছবি খোলা যাবে</string>
     <string name="translate_platform">Weblate-এ</string>
     <string name="on_google_play">Google Play-তে</string>
     <string name="shortcutSelectCard">একটি কার্ড নির্বাচন করুন</string>
@@ -241,12 +220,10 @@
     <string name="show_name_below_image_thumbnail">ছবির থাম্বনেইল এর নিচে নামটি দেখান</string>
     <string name="show_note">নোট দেখান</string>
     <string name="show_validity">বৈধতা দেখান</string>
-    <string name="height">উচ্চতা:</string>
+    <string name="height">উচ্চতা</string>
     <string name="switchToBackImage">পিছনের ছবিটিতে সুইচ করুন</string>
     <string name="switchToFrontImage">সামনের ছবিটিতে সুইচ করুন</string>
     <string name="switchToBarcode">বারকোডে সুইচ করুন</string>
-    <string name="openFrontImageInGalleryApp">সামনের ছবিটি গ্যালারি অ্যাপে খুলুন</string>
-    <string name="openBackImageInGalleryApp">পিছনের ছবিটি গ্যালারি অ্যাপে খুলুন</string>
     <string name="setBarcodeHeight">বারকোডের উচ্চতা সেট করুন</string>
     <string name="icon_header_click_text">দীর্ঘক্ষন টাচ করে থাম্বনেইল এডিট করবেন</string>
     <string name="show_balance">ব্যালান্স দেখান</string>

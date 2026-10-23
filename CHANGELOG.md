@@ -1,5 +1,152 @@
 # Changelog
 
+## v2.45.2 (Android) - 1006 (2026-10-19)
+
+- Start Wear OS sync if enabled when turning on Bluetooth
+- Limit extra screen on time while viewing a card to 5 minutes to prevent overheating
+- Avoid camera inset in full screen view
+
+## v2.45.1 (Android) - 1004 (2026-09-27)
+
+- Fix list widget not updating when opening a card from it
+- Fix opening pkpass/pdf files from network locations sometimes failing
+- Fix crash in Wear OS sync when Bluetooth is disabled
+
+## v1.0.1 (Wear OS) - 201 (2026-08-28)
+
+- Add scroll bar to card list
+- Add splash screen
+- Fix some padding issues
+- Remove barcode value from card view
+
+## v2.45.0 (Android) - 1002 (2026-08-12)
+
+- Add a Bluetooth server for Wear OS companion app support
+- Remove embedded CHANGELOG
+
+## v1.0.0 (Wear OS) - 200 (2026-08-12)
+
+- Initial release of Wear OS companion app
+
+## v2.44.0 - 168 (2026-07-28)
+
+- Add option to open image in internal image viewer in gallery
+
+## v2.43.0 - 167 (2026-07-12)
+
+- Add support for showing the card ID in the card list
+- Add support to sort by most recently added
+- Add internal image viewer for zooming card front/back/icon images
+
+## v2.42.1 - 166 (2026-05-16)
+
+- Prevent crash on devices with misbehaving NFC
+
+## v2.42.0 - 165 (2026-05-06)
+
+- Disable NFC while showing a card by default
+- Ask keyboard to capitalize each word in store name in edit screen
+- Put date in export file name
+
+## v2.41.7 - 164 (2026-03-06)
+
+Android 5.0 and 5.1 are no longer supported starting with this release. If you want to use Catima on these versions, please use version 2.41.6.
+
+- Fix crash when switching cards using volume buttons if only one card is available
+- Fix shortcut returning to previous card after rotation
+
+## v2.41.6 - 163 (2026-01-23)
+
+- Auto-detect URLs in card ID and make the clickable in card ID details pop-up
+- Fix barcode selector activity showing white squares instead of barcodes
+
+## v2.41.5 - 162 (2026-01-15)
+
+- Fix list widget sometimes opening wrong card
+- Fix several bugs with shortcut handling
+- Fix About activity not using pure black title bar in OLED mode
+- Fully remove automatic barcode encoding detection
+- Expose barcode encoding through ContentProvider (used by Gadgetbridge)
+
+## v2.41.4 - 161 (2026-01-04)
+
+- Disable automatic barcode encoding detection for now (breaks too many cards)
+
+## v2.41.3 - 160 (2026-01-04)
+
+- Follow-up for fix in 2.41.2 for cards explicitly set to ISO-8859-1
+- Migrate old cards to ISO-8859-1 to fix sudden behaviour differences for existing cards
+
+## v2.41.2 - 159 (2026-01-03)
+
+- Fix change introduced in 2.41.0 that broke support for some scanners for non-UTF-8 barcodes
+
+## v2.41.1 - 158 (2025-12-31)
+
+- Fix status and navigation bar colour in new About activity
+
+## v2.41.0 - 157 (2025-12-30)
+
+- Add support for UTF-8 barcodes
+- Add duplicate option to main screen and reorder options slightly
+- Fix column count setting not being applied to group card list
+- Remove theme colour support
+- Reduce max photo size to reduce storage use (only for newly added photos)
+- Migrate About activity from Android XML to Jetpack Compose
+
+## v2.40.0 - 156 (2025-12-08)
+
+- Copy card ID to clipboard from view dialog or long press
+- Swap balance and currency fields to hopefully reduce unintended rounding
+
+## v2.39.2 - 155 (2025-11-04)
+
+- Preparations for future improvements (rewrote many classes to Kotlin)
+
+## v2.39.1 - 154 (2025-10-01)
+
+- Fix possible crash that could occur for cards missing colour information in the database
+
+## v2.39.0 - 153 (2025-09-30)
+
+- Target Android 16
+- Fix possible crash after removing image from card
+- Remove "Screen orientation" feature (Google removed the ability for apps to control screen rotation when targeting Android 16)
+- Add crash reporter to FOSS build (not used in Google Play version, only in other app stores)
+
+## v2.38.0 - 152 (2025-09-12)
+
+- Add support for .pkpasses files
+- Remove Stocard importer (Stocard no longer exists)
+- Temporarily disable widget images below Android 12L (workaround for a crash issue)
+
+## v2.37.0 - 151 (2025-08-22)
+
+- New redesign of the Catima logo
+- Translation updates
+
+## v2.36.0 - 150 (2025-08-05)
+
+- Add a widget showing all non-archived cards
+- Prevent the keyboard from overlapping the save button in edit and group screens
+
+## v2.35.1 - 149 (2025-06-17)
+
+- Dependency and translation updates
+
+## v2.35.0 - 148 (2025-05-17)
+
+- Add ability to choose barcode width in fullscreen view
+- Remove confusing import from app function
+- Various scanning fixes
+- Fix crash when loading a pkpass file without barcode
+
+## v2.34.5 - 147 (2025-03-22)
+
+- Target Android 15
+- Fix crash reading unsupported pkpass files
+- Improve pkpass support
+
 ## v2.34.4 - 146 (2025-01-17)
 
 - Ability to sort cards by start of validity

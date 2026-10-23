@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
     <string name="action_add">Přidat</string>
-    <string name="noGiftCards">Klepněte na tlačítko plus (+) pro přidání karty nebo naimportujete karty z nabídky (⋮).</string>
+    <string name="noGiftCards">Klepněte na tlačítko plus (+) pro přidání karty nebo naimportujete karty z nabídky (⋮)</string>
     <string name="storeName">Název</string>
     <string name="note">Poznámka</string>
     <string name="cardId">ID karty</string>
@@ -12,12 +12,12 @@
     <string name="confirm">Potvrdit</string>
     <string name="ok">OK</string>
     <string name="sendLabel">Odeslat…</string>
-    <string name="editCardTitle">Editovat kartu</string>
+    <string name="editCardTitle">Upravit kartu</string>
     <string name="addCardTitle">Přidat kartu</string>
     <string name="scanCardBarcode">Naskenovat čárový kód</string>
-    <string name="importExport">Import/Export</string>
+    <string name="importExport">Import/export</string>
     <string name="exportName">Export</string>
-    <string name="importExportHelp">Zálohování dat vám umožní přesunout je do jiného zařízení.</string>
+    <string name="importExportHelp">Zálohování dat vám umožní přesunout je do jiného zařízení</string>
     <string name="importSuccessfulTitle">Importováno</string>
     <string name="importFailedTitle">Import selhal</string>
     <string name="importFailed">Import nelze provést</string>
@@ -27,11 +27,8 @@
     <string name="importing">Importuji…</string>
     <string name="exporting">Exportuji…</string>
     <string name="importOptionFilesystemTitle">Import z úložiště</string>
-    <string name="importOptionFilesystemExplanation">Vyberte konkrétní soubor v úložišti.</string>
+    <string name="importOptionFilesystemExplanation">Vyberte konkrétní soubor v úložišti</string>
     <string name="importOptionFilesystemButton">Z úložiště</string>
-    <string name="importOptionApplicationTitle">Přes jinou aplikaci</string>
-    <string name="importOptionApplicationExplanation">K otevření souboru použijte libovolnou aplikaci nebo svého oblíbeného správce souborů.</string>
-    <string name="importOptionApplicationButton">Použít jinou aplikaci</string>
     <string name="about">O aplikaci</string>
     <string name="app_license">Copyleftovaný svobodný software s licencí GPLv3+</string>
     <string name="about_title_fmt">O aplikaci <xliff:g id="app_name">%s</xliff:g></string>
@@ -44,13 +41,13 @@
     <string name="never">Nikdy</string>
     <string name="expiryDate">Vypršení platnosti</string>
     <string name="editBarcode">Upravit čárový kód</string>
-    <string name="app_resources">Svobodné zdroje třetích stran: <xliff:g id="app_resources_list">%s</xliff:g></string>
-    <string name="app_libraries">Svobodné knihovny třetích stran: <xliff:g id="app_libraries_list">%s</xliff:g></string>
+    <string name="app_resources">Zdroje třetích stran: <xliff:g id="app_resources_list">%s</xliff:g></string>
+    <string name="app_libraries">Knihovny třetích stran: <xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="app_copyright_old">Založeno na Loyalty Card Keychain
 \ncopyright © 2016–2020 Branden Archer</string>
-    <string name="exportOptionExplanation">Data budou zapsána na místo podle vašeho výběru.</string>
-    <string name="failedParsingImportUriError">Nelze zpracovat URI importu</string>
-    <string name="noCardExistsError">Tuto kartu nelze najít</string>
+    <string name="exportOptionExplanation">Data budou zapsána na místo podle vašeho výběru</string>
+    <string name="failedParsingImportUriError">Nepodařilo se zpracovat URI importu</string>
+    <string name="noCardExistsError">Kartu se nepodařilo najít</string>
     <string name="noCardsMessage">Nejprve přidejte kartu</string>
     <string name="cardShortcut">Zástupce karty</string>
     <string name="share">Sdílet</string>
@@ -73,7 +70,7 @@
     </plurals>
     <string name="importSuccessful">Data importována</string>
     <string name="intent_import_card_from_url_share_text">Chci s Vámi sdílet kartu</string>
-    <string name="settings_disable_lockscreen_while_viewing_card">Nezamykat obrazovku</string>
+    <string name="settings_disable_lockscreen_while_viewing_card">Zobrazit nad zamykací obrazovkou</string>
     <string name="settings_keep_screen_on">Nevypínat obrazovku</string>
     <string name="settings_dark_theme">Tmavý</string>
     <string name="settings_light_theme">Světlý</string>
@@ -86,21 +83,12 @@
     <string name="expiryStateSentence">Platí do: <xliff:g>%s</xliff:g></string>
     <string name="moveDown">Přesunout dolů</string>
     <string name="moveUp">Přesunout nahoru</string>
-    <string name="settings_brown_theme">Hnědá</string>
-    <string name="settings_green_theme">Zelená</string>
-    <string name="settings_sky_blue_theme">Azurová</string>
-    <string name="settings_blue_theme">Modrá</string>
-    <string name="settings_violet_theme">Fialová</string>
-    <string name="settings_magenta_theme">Purpurová</string>
-    <string name="settings_pink_theme">Růžová</string>
-    <string name="settings_catima_theme">Catima</string>
-    <string name="settings_theme_color">Barva motivu</string>
     <string name="settings_system_locale">Podle systému</string>
     <string name="settings_locale">Jazyk</string>
     <string name="turn_flashlight_off">Vypnout světlo</string>
     <string name="turn_flashlight_on">Zapnout světlo</string>
-    <string name="failedGeneratingShareURL">Nepodařilo se vygenerovat adresu URL pro sdílení. Nahlaste to prosím.</string>
-    <string name="passwordRequired">Zadejte prosím heslo</string>
+    <string name="failedGeneratingShareURL">Nepodařilo se vygenerovat adresu URL pro sdílení</string>
+    <string name="passwordRequired">Zadejte heslo</string>
     <string name="no">Ne</string>
     <string name="yes">Ano</string>
     <string name="updateBarcodeQuestionText">Změnili jste ID. Chcete také aktualizovat čárový kód, aby používal stejnou hodnotu\?</string>
@@ -118,36 +106,29 @@
     <string name="barcodeId">Hodnota čárového kódu</string>
     <string name="setBarcodeId">Nastavení hodnoty čárového kódu</string>
     <string name="sameAsCardId">Stejné jako ID</string>
-    <string name="importVoucherVaultMessage">Vyberte k importu svůj <i>vouchervault.json</i> exportovaný z Voucher Vault.
-\nVytvoříte jej tak, že nejprve stisknete tlačítko Exportovat v aplikaci Voucher Vault.</string>
+    <string name="importVoucherVaultMessage">Vyberte soubor exportu z aplikace Voucher Vault, který chcete importovat.\nVytvořte jej z nabídky stisknutím tlačítka Export v aplikaci Voucher Vault.</string>
     <string name="importVoucherVault">Import z Voucher Vault</string>
-    <string name="importStocardMessage">Vyberte k importu svůj <i>***.zip</i> exportovaný z aplikace Stocard.
-\nZískejte ji zasláním e-mailu na adresu support@stocardapp.com s žádostí o export vašich dat.</string>
-    <string name="importStocard">Import ze Stocard</string>
-    <string name="importLoyaltyCardKeychainMessage">Vyberte k importu <i>LoyaltyCardKeychain.csv</i> exportovaný z Loyalty Card Keychain.
-\nVytvoříte jej z nabídky Import/Export v Loyalty Card Keychain tak, že tam nejprve stisknete tlačítko Exportovat.</string>
+    <string name="importLoyaltyCardKeychainMessage">Vyberte soubor exportu z aplikace Loyalty Card Keychain, který chcete importovat.\nVytvořte jej z nabídky Import/export jiné aplikace Loyalty Card Keychain klepnutím na Export.</string>
     <string name="importLoyaltyCardKeychain">Import z Loyalty Card Keychain</string>
-    <string name="importFidmeMessage">Vyberte k importu svůj <i>fidme-export-request-xxxxxx.zip</i> exportovaný z FidMe a poté vyberte typy čárových kódů ručně.
-\nVytvoříte jej ze svého profilu FidMe tak, že nejprve zvolíte možnost Ochrana dat a poté stisknete tlačítko Extrahovat moje data.</string>
+    <string name="importFidmeMessage">Vyberte soubor exportu z aplikace FidMe, který chcete importovat, a poté ručně vyberte typy čárových kódů.\nVytvořte jej z aplikace FidMe vybráním položky Data Protection a stisknutím tlačítka Extract my data.</string>
     <string name="importFidme">Import z FidMe</string>
-    <string name="importCatimaMessage">Vyberte <i>catima.zip</i> exportovaný z aplikace Catima, který chcete importovat.
-\nVytvoříte jej z nabídky Import/Export jiné aplikace Catima tak, že v ní nejprve stisknete tlačítko Exportovat.</string>
+    <string name="importCatimaMessage">Vyberte soubor exportu z aplikace Catima, který chcete importovat.\nVytvořte jej z nabídky Import/export jiné aplikace Catima klepnutím na Export.</string>
     <string name="importCatima">Import z Catima</string>
     <string name="accept">Přijmout</string>
-    <string name="privacy_policy">Zásady soukromí</string>
+    <string name="privacy_policy">Ochrana soukromí</string>
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
     <string name="chooseImportType">Importovat data z</string>
     <string name="points">Body</string>
     <string name="currency">Měna</string>
     <string name="balance">Zůstatek</string>
-    <string name="errorReadingImage">Obrázek se nepodařilo přečíst</string>
+    <string name="errorReadingImage">Nepodařilo se přečíst obrázek</string>
     <string name="noBarcodeFound">Čárový kód nenalezen</string>
     <string name="groupsList">Skupiny: <xliff:g>%s</xliff:g></string>
     <string name="addFromImage">Vybrat obrázek z galerie</string>
     <string name="addManually">Zadat čárový kód ručně</string>
     <string name="leaveWithoutSaveConfirmation">Ukončit bez uložení\?</string>
     <string name="leaveWithoutSaveTitle">Ukončit</string>
-    <string name="failedOpeningFileManager">Nejprve si nainstalujte správce souborů.</string>
+    <string name="failedOpeningFileManager">Nepodařilo se otevřít správce souborů</string>
     <string name="deleteConfirmationGroup">Smazat skupinu\?</string>
     <string name="all">Všechny</string>
     <plurals name="groupCardCount">
@@ -155,7 +136,7 @@
         <item quantity="few"><xliff:g>%d</xliff:g> karty</item>
         <item quantity="other"><xliff:g>%d</xliff:g> karet</item>
     </plurals>
-    <string name="noGroups">Kliknutím na tlačítko + plus přidejte skupiny pro kategorizaci.</string>
+    <string name="noGroups">Klepnutím na tlačítko plus (+) přidejte skupiny pro kategorizaci</string>
     <string name="groups">Skupiny</string>
     <string name="enter_group_name">Zadejte název skupiny</string>
     <string name="exportSuccessful">Data exportována</string>
@@ -180,7 +161,7 @@
     <string name="and_data_usage">a využití dat</string>
     <string name="credits">Zásluhy</string>
     <string name="on_github">na GitHubu</string>
-    <string name="source_repository">Úložiště zdrojů</string>
+    <string name="source_repository">Zdrojový repozitář</string>
     <string name="license">Licence</string>
     <string name="help_translate_this_app">Pomozte s překladem této aplikace</string>
     <string name="report_error">Nahlásit chybu</string>
@@ -194,7 +175,7 @@
     <string name="group_name_is_empty">Název skupiny nesmí být prázdný</string>
     <string name="group_updated">Skupina aktualizována</string>
     <string name="editGroup">Úprava skupiny: <xliff:g>%s</xliff:g></string>
-    <string name="noGiftCardsGroup">Zatím nemáte žádné věrnostní karty. Jakmile nějaké přidáte, můžete je zde přiřadit do skupiny.</string>
+    <string name="noGiftCardsGroup">Vytvořte si karty a poté je zde přiřaďte do skupiny</string>
     <string name="shortcutSelectCard">Vybrat kartu</string>
     <string name="translate_platform">na Weblate</string>
     <string name="showMoreInfo">Zobrazit podrobnosti</string>
@@ -207,17 +188,12 @@
     </plurals>
     <string name="settings_oled_dark">Čistě černé pozadí pro tmavý motiv</string>
     <string name="include_if_asking_support">Pokud chcete požádat o podporu, uveďte následující informace:</string>
-    <string name="settings_follow_system_orientation">Podle orientace systému</string>
-    <string name="settings_portrait_orientation">Na výšku</string>
-    <string name="settings_lock_on_opening_orientation">Ponechat orientaci jako při otevření karty</string>
     <string name="archive">Archivovat</string>
     <string name="unarchive">Vrátit z archivu</string>
     <string name="unarchived">Karta vrácena z archivu</string>
-    <string name="settings_card_orientation">Orientace obrazovky</string>
-    <string name="settings_landscape_orientation">Na šířku</string>
     <string name="duplicateCard">Duplikovat</string>
     <string name="archived">Karta archivována</string>
-    <string name="failedLaunchingPhotoPicker">Nepodařilo se najít podporovanou aplikaci galerie</string>
+    <string name="failedLaunchingPhotoPicker">Nepodařilo se najít podporovaný nástroj pro výběr obrázků</string>
     <plurals name="groupCardCountWithArchived">
         <item quantity="one"><xliff:g>%1$d</xliff:g> karta (<xliff:g id="archivedCount">%2$d</xliff:g> archivovaná)</item>
         <item quantity="few"><xliff:g>%1$d</xliff:g> karty (<xliff:g id="archivedCount">%2$d</xliff:g> archivované)</item>
@@ -227,9 +203,8 @@
     <string name="nextCard">Následující</string>
     <string name="failedToOpenUrl">Nejprve nainstalujte webový prohlížeč</string>
     <string name="welcome">Vítejte v Catima</string>
-    <string name="barcodeLongPressMessage">V aplikaci pro galerii mohou být otevírány pouze obrázky</string>
     <string name="failedToRetrieveImageFile">Nepodařilo se získat soubor obrázku</string>
-    <string name="cameraPermissionDeniedTitle">Nelze získat přístup k fotoaparátu</string>
+    <string name="cameraPermissionDeniedTitle">Nepodařilo se získat přístup k fotoaparátu</string>
     <string name="importCards">Importovat karty</string>
     <string name="updateBalance">Aktualizovat zůstatek</string>
     <string name="currentBalanceSentence">Současný zůstatek: <xliff:g>%s</xliff:g></string>
@@ -243,12 +218,10 @@
     <string name="anyDate">Jakékoliv datum</string>
     <string name="chooseValidFromDate">Vyberte datum počátku platnosti</string>
     <string name="validFromSentence">Platnost od: <xliff:g>%s</xliff:g></string>
-    <string name="height">Výška:</string>
+    <string name="height">Výška</string>
     <string name="switchToFrontImage">Přepnout na přední obrázek</string>
     <string name="switchToBackImage">Přepnout na zadní obrázek</string>
     <string name="switchToBarcode">Přepnout na čárový kód</string>
-    <string name="openFrontImageInGalleryApp">Otevřít přední obrázek v galerii</string>
-    <string name="openBackImageInGalleryApp">Otevřít zadní obrázek v galerii</string>
     <string name="setBarcodeHeight">Nastavit výšku čárového kódu</string>
     <string name="donate">Přispět</string>
     <string name="icon_header_click_text">Dlouhým stisknutím miniaturu upravíte</string>
@@ -257,14 +230,14 @@
     <string name="show_validity">Zobrazit platnost</string>
     <string name="show_balance">Zobrazit zůstatek</string>
     <string name="permissionReadCardsDescription">číst vaše karty Catima a všechny jejich podrobnosti, včetně poznámek a obrázků</string>
-    <string name="settings_allow_content_provider_read_summary">Aplikace budou i tak muset požádat o povolení k poskytnutí přístupu</string>
+    <string name="settings_allow_content_provider_read_summary">Umožňuje aplikaci Gadgetbridge synchronizovat vaše karty do podporovaných chytrých hodinek</string>
     <string name="permissionReadCardsLabel">Číst karty Catima</string>
-    <string name="settings_allow_content_provider_read_title">Umožnit ostatním aplikacím přístup k mým datům</string>
-    <string name="settings_keep_screen_on_summary">Při prohlížení karty vypnout časovač zhasnutí obrazovky</string>
+    <string name="settings_allow_content_provider_read_title">Synchronizace s Gadgetbridge</string>
+    <string name="settings_keep_screen_on_summary">Při prohlížení karty prodloužit časovač zhasnutí obrazovky</string>
     <string name="settings_oled_dark_summary">Snižuje používání baterie na displejích OLED</string>
     <string name="settings_category_title_privacy">Soukromí</string>
     <string name="settings_display_barcode_max_brightness_summary">U některých čteček je to potřeba</string>
-    <string name="settings_disable_lockscreen_while_viewing_card_summary">Při prohlížení karty zabránit zamčení obrazovky</string>
+    <string name="settings_disable_lockscreen_while_viewing_card_summary">Při prohlížení karty obejít zamčení obrazovky</string>
     <string name="settings_category_title_cards">Zobrazení karty</string>
     <string name="settings_category_title_general">Obecné</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Copyright © 2019–<xliff:g>%d</xliff:g> Sylvia van Os a přispěvatelé</string>
@@ -281,18 +254,17 @@
     <string name="addWithoutBarcode">Přidat kartu bez čárového kódu</string>
     <string name="field_must_not_be_empty">Položka nesmí být prázdná</string>
     <string name="app_name">Catima</string>
-    <string name="settings_follow_sensor_orientation">Vždy otáčet (ignoruje nastavení systému)</string>
     <string name="continue_">Pokračovat</string>
     <string name="add_manually_warning_title">Doporučuje se skenování</string>
-    <string name="add_manually_warning_message">V některých obchodech se hodnota čárového kódu liší od čísla napsaného na kartě. Z tohoto důvodu nemusí ruční zadání čárového kódu vždy fungovat. Důrazně doporučujeme místo toho naskenovat čárový kód pomocí fotoaparátu. Chcete přesto pokračovat?</string>
+    <string name="add_manually_warning_message">U některých karet se hodnota čárového kódu liší od čísla napsaného na kartě. Z tohoto důvodu nemusí ruční zadání čárového kódu vždy fungovat. Doporučujeme místo toho naskenovat čárový kód pomocí fotoaparátu. Chcete přesto pokračovat?</string>
     <string name="spend">Utratit</string>
     <string name="receive">Obdržet</string>
     <string name="amountParsingFailed">Neplatné množství</string>
     <string name="addFromPdfFile">Vybrat soubor PDF</string>
-    <string name="errorReadingFile">Soubor nelze přečíst</string>
+    <string name="errorReadingFile">Soubor se nepodařilo přečíst</string>
     <string name="pageWithNumber">Stránka <xliff:g>%d</xliff:g></string>
     <string name="multipleBarcodesFoundPleaseChooseOne">Který z nalezených čárových kódů chcete použít?</string>
-    <string name="failedLaunchingFileManager">Nelze nalézt podporovaný správce souborů</string>
+    <string name="failedLaunchingFileManager">Nepodařilo se najít podporovaného správce souborů</string>
     <string name="noCameraFoundGuideText">Zdá se, že vaše zařízení nemá fotoaparát. Pokud ano, zkuste zařízení restartovat. V opačném případě použijte tlačítko Další možnosti a přidejte čárový kód jiným způsobem.</string>
     <string name="importCancelled">Import zrušen</string>
     <string name="exportCancelled">Export zrušen</string>
@@ -300,10 +272,10 @@
     <string name="useFrontImage">Použít přední obrázek</string>
     <string name="settings_use_volume_keys_navigation_summary">Pomocí tlačítek hlasitosti můžete změnit, která karta se zobrazí</string>
     <string name="settings_use_volume_keys_navigation">Přepínat karty pomocí tlačítek hlasitosti</string>
-    <string name="generic_error_please_retry">Je nám líto, něco se pokazilo, zkuste to prosím znovu...</string>
+    <string name="generic_error_please_retry">Došlo k chybě</string>
     <string name="settings_column_count_portrait">Sloupce v režimu na výšku</string>
     <string name="settings_automatic_column_count">Automatický</string>
-    <string name="addFromPkpass">Vyberte soubor Passbook (.pkpass)</string>
+    <string name="addFromPkpass">Vyberte soubor Passbook (.pkpass / .pkpasses)</string>
     <string name="unsupportedFile">Tento soubor není podporován</string>
     <string name="settings_category_title_cards_overview">Přehled karet</string>
     <string name="settings_column_count_landscape">Sloupce v režimu na šířku</string>
@@ -315,4 +287,74 @@
     <string name="settings_column_count_4">4</string>
     <string name="settings_column_count_5">5</string>
     <string name="sort_by_valid_from">Platnost od</string>
+    <string name="setBarcodeWidth">Nastavit šířku čárového kódu</string>
+    <string name="width">Šířka</string>
+    <string name="card_list_widget_name">Seznam karet</string>
+    <string name="card_list_widget_empty">Karty přidané do aplikace Catima se zobrazí zde. Pokud máte karty, ujistěte se, že nejsou všechny archivovány.</string>
+    <string name="cardWithNumber">Karta <xliff:g>%d</xliff:g></string>
+    <string name="cardWithNumberAndLocale">Karta <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
+    <string name="pleaseDoNotRotateTheDevice">Neotáčejte prosím zařízení, protože tím zrušíte akci</string>
+    <string name="acra_catima_has_crashed">Omlouváme se, aplikace <xliff:g id="app_name">%s</xliff:g> havarovala. Pomozte nám prosím s opravou tohoto problému odesláním hlášení o chybě.</string>
+    <string name="acra_explain_crash">Pokud je to možné, přidejte prosím další podrobnosti o tom, co jste tu dělali:</string>
+    <string name="acra_crash_email_subject">Hlášení o pádu <xliff:g id="app_name">%s</xliff:g></string>
+    <string name="pref_enable_acra">Ptát se na odesílání hlášení o pádech</string>
+    <string name="pref_enable_acra_summary">Pokud je povoleno, budete při pádu aplikace dotázáni na jeho nahlášení. Hlášení nejsou nikdy odesílána automaticky.</string>
+    <string name="copy_value">Kopírovat hodnotu</string>
+    <string name="copied_to_clipboard">Zkopírováno do schránky</string>
+    <string name="nothing_to_copy">Nenalezena žádná hodnota</string>
+    <string name="barcodeEncoding">Kódování čárového kódu</string>
+    <string name="back">Zpět</string>
+    <string name="settings_disable_nfc_while_viewing_card">Pozastavit NFC</string>
+    <string name="settings_disable_nfc_while_viewing_card_summary">Pozastaví NFC pro zabránění spuštění NFC plateb při zobrazování karty</string>
+    <string name="nfc_blocked_while_viewing_card">NFC je pozastaveno</string>
+    <string name="change_settings">Změnit nastavení</string>
+    <string name="nfc_block_system_error">Nepodařilo se pozastavit NFC</string>
+    <string name="sort_by_most_recently_added">Nedávno přidáno</string>
+    <string name="zoomFrontImage">Přiblížit přední obrázek</string>
+    <string name="zoomBackImage">Přiblížit zadní obrázek</string>
+    <string name="show_card_id">Zobrazit ID karty</string>
+    <string name="open_in_gallery">Otevřít v galerii</string>
+    <string name="settings_wear_sync">Synchronizovat s Wear OS</string>
+    <string name="settings_wear_sync_summary">Umožňuje doprovodné aplikaci Wear OS číst vaše karty skrze Bluetooth</string>
+    <string name="wear_sync_permission_required">Catima potřebuje oprávnění, které jste zamítli, k synchronizaci s vašimi chytrými hodinkami Wear OS</string>
+    <string name="settings_wear_sync_devices">Povolená zařízení Wear OS</string>
+    <string name="settings_wear_sync_devices_summary">Správa zařízení, u kterých je povolena synchronizace skrze Bluetooth</string>
+    <string name="settings_wear_sync_no_devices">Žádná povolená zařízení</string>
+    <plurals name="settings_wear_sync_devices_summary_count">
+        <item quantity="one"><xliff:g>%d</xliff:g> povolené zařízení</item>
+        <item quantity="few"><xliff:g>%d</xliff:g> povolená zařízení</item>
+        <item quantity="many"><xliff:g>%d</xliff:g> povolených zařízení</item>
+        <item quantity="other"><xliff:g>%d</xliff:g> povolených zařízení</item>
+    </plurals>
+    <string name="settings_wear_sync_blocked_devices">Zablokovaná zařízení Wear OS</string>
+    <string name="settings_wear_sync_blocked_devices_summary">Spravovat zablokovaná zařízení Wear OS</string>
+    <string name="settings_wear_sync_no_blocked_devices">Žádná zablokovaná zařízení</string>
+    <plurals name="settings_wear_sync_blocked_devices_summary_count">
+        <item quantity="one"><xliff:g>%d</xliff:g> zablokované zařízení</item>
+        <item quantity="few"><xliff:g>%d</xliff:g> zablokovaná zařízení</item>
+        <item quantity="many"><xliff:g>%d</xliff:g> zablokovaných zařízení</item>
+        <item quantity="other"><xliff:g>%d</xliff:g> zablokovaných zařízení</item>
+    </plurals>
+    <string name="settings_wear_sync_unpair_title">Odstranit zařízení?</string>
+    <string name="settings_wear_sync_unpair_message">Odstranit zařízení <xliff:g>%1$s</xliff:g> z aplikace Catima? Již nebude moci synchronizovat vaše karty.</string>
+    <string name="settings_wear_sync_unblock_message">Odstranit zařízení <xliff:g>%1$s</xliff:g> ze seznamu zablokovaných? Bude moci znovu žádat o přístup.</string>
+    <string name="settings_wear_sync_unpair">Odstranit</string>
+    <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
+    <string name="settings_wear_sync_tap_to_remove">Klepněte na zařízení pro jeho odstranění.</string>
+    <string name="wear_bt_pairing_channel_name">Párování zařízení s Wear OS</string>
+    <string name="wear_bt_pairing_title">Zařízení s Wear OS požaduje synchronizaci</string>
+    <string name="wear_bt_pairing_message">Povolit zařízení <xliff:g>%1$s</xliff:g> přístup k vašim kartám?</string>
+    <string name="wear_bt_pairing_allow">Povolit</string>
+    <string name="wear_bt_pairing_block">Zablokovat</string>
+    <string name="wear_bt_pairing_allowed">Zařízení <xliff:g>%1$s</xliff:g> má nyní povolenou synchronizaci.</string>
+    <string name="wear_bt_pairing_blocked">Zařízení <xliff:g>%1$s</xliff:g> bylo zablokováno.</string>
+    <string name="wear_bt_pairing_mismatch_title">Nový požadavek na autorizaci ze zařízení <xliff:g>%1$s</xliff:g></string>
+    <string name="wear_bt_pairing_mismatch_message">Toto zařízení bylo v minulosti autorizováno, nyní se ale prezentuje jiným tokenem identity. K této situaci může dojít při reinstalaci aplikace Wear OS nebo vymazání jejích dat. Může to ale také značit pokus o maskování adresy Bluetooth MAC.\n\nPřijměte pouze, pokud jste na těchto hodinkách nedávno přeinstalovali aplikaci Catima pro Wear OS.</string>
+    <string name="open_settings">Otevřít nastavení</string>
+    <string name="wear_bt_channel_name">Doprovoná aplikace na Wear OS</string>
+    <string name="wear_bt_notification_title">Synchronizace s Catima Wear OS je aktivní</string>
+    <string name="settings_category_title_smartwatch">Podpora chytrých hodinek</string>
+    <string name="wear_bt_failed_foreground_notification_title">Nepodařilo se spustit synchronizační službu Wear OS</string>
+    <string name="wear_bt_critical_error_channel_name">Kritická chyba synchronizace s Wear OS</string>
+    <string name="android_blocked_startup">Systém Android zablokoval spuštění služby Wear OS</string>
 </resources>

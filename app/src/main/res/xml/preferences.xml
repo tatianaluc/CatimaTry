@@ -16,16 +16,6 @@
             app:singleLineTitle="false"
             app:useSimpleSummaryProvider="true" />
 
-        <ListPreference
-            android:key="@string/setting_key_theme_color"
-            android:title="@string/settings_theme_color"
-            android:defaultValue="@string/settings_key_system_theme"
-            android:entries="@array/color_value_strings"
-            android:entryValues="@array/color_values"
-            app:iconSpaceReserved="false"
-            app:singleLineTitle="false"
-            app:useSimpleSummaryProvider="true" />
-
         <SwitchPreferenceCompat
             android:widgetLayout="@layout/preference_material_switch"
             android:defaultValue="false"
@@ -44,6 +34,15 @@
             app:iconSpaceReserved="false"
             app:singleLineTitle="false"
             app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:widgetLayout="@layout/preference_material_switch"
+            android:defaultValue="true"
+            android:key="acra.enable"
+            android:title="@string/pref_enable_acra"
+            android:summary="@string/pref_enable_acra_summary"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false"/>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -93,16 +92,6 @@
             app:iconSpaceReserved="false"
             app:singleLineTitle="false" />
 
-        <ListPreference
-            android:defaultValue="@string/settings_key_follow_system_orientation"
-            android:entries="@array/card_orientation_values_strings"
-            android:entryValues="@array/card_orientation_values"
-            android:key="@string/settings_key_card_orientation"
-            android:title="@string/settings_card_orientation"
-            app:iconSpaceReserved="false"
-            app:singleLineTitle="false"
-            app:useSimpleSummaryProvider="true" />
-
         <SwitchPreferenceCompat
             android:widgetLayout="@layout/preference_material_switch"
             android:defaultValue="true"
@@ -120,10 +109,19 @@
             android:title="@string/settings_disable_lockscreen_while_viewing_card"
             app:iconSpaceReserved="false"
             app:singleLineTitle="false" />
+
+        <SwitchPreferenceCompat
+            android:widgetLayout="@layout/preference_material_switch"
+            android:defaultValue="true"
+            android:key="@string/settings_key_disable_nfc_while_viewing_card"
+            android:summary="@string/settings_disable_nfc_while_viewing_card_summary"
+            android:title="@string/settings_disable_nfc_while_viewing_card"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/settings_category_title_privacy"
+        android:title="@string/settings_category_title_smartwatch"
         app:iconSpaceReserved="false">
 
         <SwitchPreferenceCompat
@@ -135,6 +133,28 @@
             app:iconSpaceReserved="false"
             app:singleLineTitle="false" />
 
+        <SwitchPreferenceCompat
+            android:widgetLayout="@layout/preference_material_switch"
+            android:defaultValue="false"
+            android:key="@string/settings_key_wear_sync"
+            android:summary="@string/settings_wear_sync_summary"
+            android:title="@string/settings_wear_sync"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false" />
+
+        <Preference
+            android:key="@string/settings_key_wear_sync_devices"
+            android:title="@string/settings_wear_sync_devices"
+            android:summary="@string/settings_wear_sync_devices_summary"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false" />
+
+        <Preference
+            android:key="@string/settings_key_wear_sync_blocked_devices"
+            android:title="@string/settings_wear_sync_blocked_devices"
+            android:summary="@string/settings_wear_sync_blocked_devices_summary"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -16,7 +16,7 @@
     <string name="about">정보</string>
     <string name="exporting">내보내는 중…</string>
     <string name="importing">가져오는 중…</string>
-    <string name="importExportHelp">데이터를 백업하면 다른 장치로 이동할 수 있습니다.</string>
+    <string name="importExportHelp">데이터를 백업하면 다른 장치로 이동할 수 있습니다</string>
     <string name="exportName">내보내기</string>
     <string name="importExport">가져오기/내보내기</string>
     <string name="cardShortcut">카드 바로 가기</string>
@@ -41,11 +41,9 @@
     <string name="noGiftCards">+ 더하기 버튼을 클릭하여 카드를 추가하거나 ⋮ 메뉴에서 가져옵니다.</string>
     <string name="action_add">추가</string>
     <string name="action_search">검색</string>
-    <string name="importOptionApplicationTitle">다른 앱 사용</string>
-    <string name="importOptionFilesystemExplanation">파일 시스템에서 파일을 선택합니다.</string>
+    <string name="importOptionFilesystemExplanation">파일 시스템에서 파일을 선택합니다</string>
     <string name="importOptionFilesystemTitle">파일 시스템에서 가져오기</string>
     <string name="exportFailed">내보내기를 수행할 수 없습니다</string>
-    <string name="importOptionApplicationExplanation">다른 파일 관리자 또는 앱을 사용하여 파일을 엽니다.</string>
     <string name="exportFailedTitle">내보내기 실패</string>
     <string name="exportSuccessfulTitle">내보내기 완료</string>
     <string name="importFailed">가져오기를 수행할 수 없습니다</string>
@@ -53,9 +51,8 @@
     <string name="importSuccessfulTitle">가져오기 완료</string>
     <string name="storeName">이름</string>
     <string name="thumbnailDescription">썸네일</string>
-    <string name="importOptionApplicationButton">다른 앱 사용</string>
-    <string name="failedParsingImportUriError">가져올 URI를 분석할 수 없음</string>
-    <string name="noCardExistsError">해당 카드를 찾을 수 없음</string>
+    <string name="failedParsingImportUriError">가져올 URI를 분석할 수 없습니다</string>
+    <string name="noCardExistsError">해당 카드를 찾을 수 없습니다</string>
     <string name="moveUp">위로 이동</string>
     <string name="leaveWithoutSaveTitle">종료</string>
     <string name="moveDown">아래로 이동</string>
@@ -66,7 +63,7 @@
     <plurals name="deleteCardsTitle">
         <item quantity="other">카드 <xliff:g>%d</xliff:g> 장 제거</item>
     </plurals>
-    <string name="noGiftCardsGroup">카드를 몇 장 만든 다음 여기에서 그룹에 할당합니다.</string>
+    <string name="noGiftCardsGroup">카드를 몇 장 만든 다음 이곳에서 그룹에 할당합니다</string>
     <string name="noCardsMessage">먼저 카드 추가</string>
     <string name="leaveWithoutSaveConfirmation">저장하지 않고 나가시겠습니까\?</string>
     <string name="intent_import_card_from_url_share_text">카드를 공유하고 싶습니다</string>
@@ -85,22 +82,15 @@
     <string name="takePhoto">사진 찍기</string>
     <string name="yes">예</string>
     <string name="no">아니오</string>
-    <string name="failedGeneratingShareURL">공유 가능한 URL을 생성할 수 없습니다. 이를 개발자에게 알려 주십시오.</string>
+    <string name="failedGeneratingShareURL">공유 가능한 URL을 생성할 수 없습니다</string>
     <string name="turn_flashlight_off">손전등 끄기</string>
     <string name="settings_locale">언어</string>
     <string name="settings_system_locale">시스템</string>
     <string name="selectColor">색상 선택</string>
-    <string name="settings_theme_color">테마 색상</string>
-    <string name="settings_catima_theme">Catima</string>
-    <string name="settings_pink_theme">핑크색</string>
-    <string name="settings_magenta_theme">자홍색</string>
-    <string name="settings_violet_theme">보라색</string>
-    <string name="settings_blue_theme">파란색</string>
-    <string name="app_contributors">기여자: <xliff:g id="app_contributors">%s</xliff:g></string>
+    <string name="app_contributors">제작 지원: <xliff:g id="app_contributors">%s</xliff:g></string>
     <string name="showMoreInfo">정보 보기</string>
     <string name="updateBalance">잔액 업데이트</string>
     <string name="failedToRetrieveImageFile">이미지 파일을 검색하지 못했습니다</string>
-    <string name="barcodeLongPressMessage">갤러리 앱에서는 이미지만 열 수 있습니다</string>
     <string name="sort_by_name">이름</string>
     <string name="reverse">... 역순으로</string>
     <string name="sort_by">정렬 기준</string>
@@ -143,12 +133,10 @@
     <string name="barcodeId">바코드 값</string>
     <string name="setBackImage">이미지 설정</string>
     <string name="exportSuccessful">데이터 내보냄</string>
-    <string name="settings_disable_lockscreen_while_viewing_card">화면 잠금 방지</string>
+    <string name="settings_disable_lockscreen_while_viewing_card">잠금 화면 위에 표시</string>
     <string name="group_updated">그룹 업데이트됨</string>
     <string name="moveBarcodeToTopOfScreen">바코드를 화면 상단으로 이동</string>
-    <string name="height">키:</string>
-    <string name="openFrontImageInGalleryApp">갤러리 앱에서 전면 이미지 열기</string>
-    <string name="openBackImageInGalleryApp">갤러리 앱에서 다시 이미지 열기</string>
+    <string name="height">키</string>
     <string name="setBarcodeHeight">바코드 높이 설정</string>
     <string name="setFrontImage">전면 이미지 설정</string>
     <plurals name="selectedCardCount">
@@ -156,14 +144,14 @@
     </plurals>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">저작권 © 2019–<xliff:g>%d</xliff:g> Sylvia van Os 및 기여자</string>
     <string name="noCameraPermissionDirectToSystemSetting">바코드를 스캔하려면 Catima가 카메라에 접근해야 합니다. 권한 설정을 변경하려면 여기를 탭하세요.</string>
-    <string name="exportOptionExplanation">데이터는 선택한 위치에 기록됩니다.</string>
+    <string name="exportOptionExplanation">데이터는 선택한 위치에 기록됩니다</string>
     <string name="app_license">GPL v3+로 라이선스된 카피레프트 자유 소프트웨어</string>
-    <string name="failedOpeningFileManager">먼저 파일 관리자를 설치하십시오.</string>
+    <string name="failedOpeningFileManager">파일 관리자를 열 수 없습니다</string>
     <string name="importSuccessful">데이터 들여옴</string>
     <string name="group_name_is_empty">그룹 이름은 필수임</string>
     <string name="chooseExpiryDate">만료일 선택</string>
     <string name="settings_oled_dark">어두운 테마를 위한 검정색 배경</string>
-    <string name="noGroups">+ 더하기 버튼을 클릭하여 분류할 그룹을 추가합니다.</string>
+    <string name="noGroups">+ 더하기 버튼을 눌러 카테고리 그룹 추가</string>
     <string name="deleteConfirmationGroup">그룹을 삭제하시겠습니까\?</string>
     <string name="errorReadingImage">이미지를 읽을 수 없습니다</string>
     <string name="expiryStateSentence">만료: <xliff:g>%s</xliff:g></string>
@@ -201,14 +189,13 @@
     <string name="barcodeImageDescriptionWithType">이미지 <xliff:g>%s</xliff:g> 바코드</string>
     <string name="photos">사진</string>
     <string name="storageReadPermissionRequired">이 작업에 필요한 저장소를 읽을 수 있는 권한…</string>
-    <string name="app_libraries">자유 타사 라이브러리: <xliff:g id="app_libraries_list">%s</xliff:g></string>
+    <string name="app_libraries">서드파티 라이브러리: <xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="cameraPermissionRequired">이 작업에 필요한 카메라 액세스 권한…</string>
     <string name="cameraPermissionDeniedTitle">카메라 접근 실패</string>
     <string name="importOptionFilesystemButton">파일 시스템에서</string>
     <string name="app_copyright_old">Loyalty Card Keychain 기반
 \n저작권 © 2016–2020 Branden Archer</string>
     <string name="app_resources">자유 타사 리소스: <xliff:g id="app_resources_list">%s</xliff:g></string>
-    <string name="settings_lock_on_opening_orientation">카드를 열 때 사용되는 방향으로 고정</string>
     <string name="editGroup">그룹 편집: <xliff:g>%s</xliff:g></string>
     <string name="frontImageDescription">전면 사진</string>
     <string name="backImageDescription">후면 사진</string>
@@ -216,43 +203,29 @@
     <string name="importCards">카드 가져오기</string>
     <string name="updateBalanceTitle">지출하거나 수령한 금액은 얼마입니까?</string>
     <string name="newBalanceSentence">새 잔액: <xliff:g>%s</xliff:g></string>
-    <string name="settings_card_orientation">화면 방향</string>
-    <string name="settings_follow_system_orientation">기기 설정 따르기</string>
-    <string name="settings_portrait_orientation">세로</string>
-    <string name="settings_landscape_orientation">가로</string>
     <string name="noGroupCards">이 그룹은 비어 있습니다</string>
     <string name="app_loyalty_card_keychain">로열티 카드 키체인</string>
     <string name="privacy_policy">개인 정보 정책</string>
     <string name="importCatima">Catima에서 가져오기</string>
-    <string name="importCatimaMessage">가져올 Catima에서 <i>catima.zip</i> 내보내기를 선택합니다.
-\n먼저 내보내기를 눌러 다른 Catima 앱의 가져오기/내보내기 메뉴에서 생성합니다.</string>
+    <string name="importCatimaMessage">가져올 Catima에서 <i>catima.zip</i> 내보내기를 선택합니다. \n먼저 내보내기를 눌러 다른 Catima 앱의 가져오기/내보내기 메뉴에서 생성합니다.</string>
     <string name="importFidme">FidMe에서 가져오기</string>
-    <string name="importFidmeMessage">가져올 FidMe에서 <i>fidme-export-request-xxxxxx.zip</i> 내보내기를 선택하고 나중에 바코드 유형을 수동으로 선택합니다.
-\n데이터 보호를 선택한 다음 먼저 내 데이터 추출을 눌러 FidMe 프로필에서 생성합니다.</string>
-    <string name="importLoyaltyCardKeychainMessage">가져올 포인트 카드 키체인에서 <i>LoyaltyCardKeychain.csv</i> 내보내기를 선택합니다.
-\n먼저 내보내기를 눌러 로열티 카드 키체인의 가져오기/내보내기 메뉴에서 만드십시오.</string>
+    <string name="importFidmeMessage">가져올 FidMe에서 <i>fidme-export-request-xxxxxx.zip</i> 내보내기를 선택하고 나중에 바코드 유형을 수동으로 선택합니다. \n데이터 보호를 선택한 다음 먼저 내 데이터 추출을 눌러 FidMe 프로필에서 생성합니다.</string>
+    <string name="importLoyaltyCardKeychainMessage">가져올 포인트 카드 키체인에서 <i>LoyaltyCardKeychain.csv</i> 내보내기를 선택합니다. \n먼저 내보내기를 눌러 로열티 카드 키체인의 가져오기/내보내기 메뉴에서 만드십시오.</string>
     <string name="setBarcodeId">바코드 값 설정</string>
-    <string name="importStocard">Stocard에서 가져오기</string>
-    <string name="importStocardMessage">가져올 Stocard에서 <i>***.zip</i> 내보내기를 선택합니다.
-\nsupport@stocardapp.com으로 이메일을 보내 데이터 내보내기를 요청하면 받을 수 있습니다.</string>
     <string name="importVoucherVault">Voucher Vault에서 가져오기</string>
-    <string name="importVoucherVaultMessage">가져올 Voucher Vault에서 <i>vouchervault.json</i> 내보내기를 선택합니다.
-\n먼저 바우처 금고에서 내보내기를 눌러 생성하세요.</string>
+    <string name="importVoucherVaultMessage">가져올 Voucher Vault에서 <i>vouchervault.json</i> 내보내기를 선택합니다. \n먼저 바우처 금고에서 내보내기를 눌러 생성하세요.</string>
     <string name="sameAsCardId">아이디와 동일</string>
-    <string name="settings_sky_blue_theme">하늘색</string>
-    <string name="settings_green_theme">초록색</string>
-    <string name="settings_brown_theme">갈색</string>
     <string name="previousCard">이전의</string>
     <string name="nextCard">다음</string>
     <string name="failedToOpenUrl">먼저 웹 브라우저를 설치하십시오</string>
-    <string name="settings_disable_lockscreen_while_viewing_card_summary">카드가 보일 때 화면 잠금 방지</string>
+    <string name="settings_disable_lockscreen_while_viewing_card_summary">카드가 보일 때 화면 잠금 우회</string>
     <string name="permissionReadCardsDescription">당신의 Catima 카드와 그에 대한 모든 세부 정보, 메모 및 이미지를 읽으세요</string>
     <string name="settings_oled_dark_summary">OLED 화면에서의 배터리 사용량 줄임</string>
     <string name="app_copyright_short">저작권 © Sylvia van Os 및 기여자</string>
-    <string name="settings_allow_content_provider_read_summary">접근을 위해서는 해당 앱에서 별도로 권한 요청을 해야 합니다</string>
-    <string name="settings_allow_content_provider_read_title">다른 앱의 내 정보 접근 허용</string>
+    <string name="settings_allow_content_provider_read_summary">Gadgetbridge 앱이 카드를 지원하는 시계와 동기화하도록 허용</string>
+    <string name="settings_allow_content_provider_read_title">Gadgetbridge와 동기화</string>
     <string name="permissionReadCardsLabel">Catima 카드 읽기</string>
-    <string name="settings_keep_screen_on_summary">카드가 보일 때 화면 꺼짐 방지</string>
+    <string name="settings_keep_screen_on_summary">카드가 보일 때 화면 꺼짐 시간 연장</string>
     <string name="view_online">온라인에서 보기</string>
     <string name="settings_category_title_general">일반</string>
     <string name="action_display_options">디스플레이 옵션</string>
@@ -270,7 +243,6 @@
     <string name="addWithoutBarcode">바코드가 없는 카드 추가</string>
     <string name="app_name">Catima</string>
     <string name="add_manually_warning_title">스캔을 권장합니다</string>
-    <string name="settings_follow_sensor_orientation">항상 회전 (시스템 설정 무시)</string>
     <string name="continue_">계속</string>
     <string name="addFromPdfFile">PDF 파일 선택</string>
     <string name="errorReadingFile">파일을 읽을 수 없습니다</string>
@@ -287,7 +259,7 @@
     <string name="useFrontImage">전면 이미지 사용</string>
     <string name="useBackImage">후면 이미지 사용</string>
     <string name="addFromPkpass">Passbook 파일 선택하기 (.pkpass)</string>
-    <string name="generic_error_please_retry">죄송합니다, 문제가 발생했습니다. 다시 시도해 주세요...</string>
+    <string name="generic_error_please_retry">오류가 발생했습니다</string>
     <string name="settings_use_volume_keys_navigation">볼륨 버튼을 사용하여 카드 전환하기</string>
     <string name="unsupportedFile">이 파일은 지원되지 않습니다</string>
     <string name="settings_use_volume_keys_navigation_summary">볼륨 버튼을 사용하여 표시되는 카드를 변경합니다</string>
@@ -303,4 +275,68 @@
     <string name="settings_automatic_column_count">자동</string>
     <string name="settings_column_count_1">1</string>
     <string name="sort_by_valid_from">유효 기간</string>
+    <string name="width">너비</string>
+    <string name="setBarcodeWidth">바코드 너비를 설정하세요</string>
+    <string name="card_list_widget_name">카드 목록</string>
+    <string name="settings_disable_nfc_while_viewing_card">NFC 일시 중지</string>
+    <string name="card_list_widget_empty">Catima에 멤버십 카드를 추가하면 여기에 표시됩니다. 카드가 있는데도 보이지 않는다면 모두 보관 처리되어 있지 않은지 확인해 보세요.</string>
+    <string name="pleaseDoNotRotateTheDevice">기기를 회전하지 마세요. 진행 중인 작업이 취소될 수 있습니다</string>
+    <string name="acra_catima_has_crashed">죄송합니다. <xliff:g id="app_name">%s</xliff:g> 앱이 종료되었습니다. 문제 해결을 위해 오류 리포트를 보내주세요.</string>
+    <string name="acra_crash_email_subject"><xliff:g id="app_name">%s</xliff:g> 크래시 리포트</string>
+    <string name="pref_enable_acra">오류 리포트 전송 요청</string>
+    <string name="pref_enable_acra_summary">이 기능을 켜면 오류가 발생했을 때 보고서 전송 여부를 확인합니다. 오류 리포트는 절대 자동으로 전송되지 않습니다.</string>
+    <string name="copy_value">값 복사</string>
+    <string name="copied_to_clipboard">클립보드에 복사됨</string>
+    <string name="nothing_to_copy">데이터를 찾을 수 없습니다</string>
+    <string name="back">돌아가기</string>
+    <string name="nfc_blocked_while_viewing_card">NFC 일시 중지됨</string>
+    <string name="change_settings">설정 변경</string>
+    <string name="nfc_block_system_error">NFC 일시 중지에 실패</string>
+    <string name="settings_disable_nfc_while_viewing_card_summary">카드를 보는 동안 NFC 결제가 실행되는 것을 방지하기 위해 NFC 기능을 일시 중지합니다</string>
+    <string name="cardWithNumber"><xliff:g>%d</xliff:g>번 카드</string>
+    <string name="cardWithNumberAndLocale"><xliff:g>%d</xliff:g> 번 카드 (<xliff:g>%s</xliff:g>)</string>
+    <string name="acra_explain_crash">가능하다면, 오류가 발생했을 때 어떤 작업을 하고 계셨는지 자세히 적어주세요:</string>
+    <string name="barcodeEncoding">바코드 인코딩</string>
+    <string name="settings_wear_sync_devices">허용한 Wear OS 기기</string>
+    <string name="settings_wear_sync_devices_summary">블루투스 동기화를 허용한 기기 관리</string>
+    <string name="settings_wear_sync_no_devices">허용한 기기 없음</string>
+    <plurals name="settings_wear_sync_devices_summary_count">
+        <item quantity="other">기기 <xliff:g>%d</xliff:g>개 허용함</item>
+    </plurals>
+    <string name="settings_wear_sync_blocked_devices">차단한 Wear OS 기기</string>
+    <string name="settings_wear_sync_blocked_devices_summary">차단한 Wear OS 기기 관리</string>
+    <string name="settings_wear_sync_no_blocked_devices">차단한 기기 없음</string>
+    <plurals name="settings_wear_sync_blocked_devices_summary_count">
+        <item quantity="other">기기 <xliff:g>%d</xliff:g>개 차단함</item>
+    </plurals>
+    <string name="settings_wear_sync_unpair_title">기기를 제거하시겠습니까?</string>
+    <string name="settings_wear_sync_unpair_message">Catima에서 <xliff:g>%1$s</xliff:g> 기기를 제거하시겠습니까? 더 이상 카드를 동기화하지 못하게 됩니다.</string>
+    <string name="settings_wear_sync_unblock_message">차단한 목록에서 <xliff:g>%1$s</xliff:g> 기기를 제거하시겠습니까? 접근 요청을 다시 할 수 있게 됩니다.</string>
+    <string name="settings_wear_sync_unpair">제거</string>
+    <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
+    <string name="settings_wear_sync_tap_to_remove">기기를 눌러 제거하십시오.</string>
+    <string name="wear_bt_pairing_channel_name">Wear OS 기기 페어링</string>
+    <string name="wear_bt_pairing_title">Wear OS 기기가 동기화하려 함</string>
+    <string name="wear_bt_pairing_message"><xliff:g>%1$s</xliff:g> 기기가 카드에 접근하도록 허용합니까?</string>
+    <string name="wear_bt_pairing_allow">허용</string>
+    <string name="wear_bt_pairing_block">차단</string>
+    <string name="wear_bt_pairing_allowed"><xliff:g>%1$s</xliff:g>의 동기화를 허용했습니다.</string>
+    <string name="wear_bt_pairing_blocked"><xliff:g>%1$s</xliff:g> 기기를 차단했습니다.</string>
+    <string name="wear_bt_pairing_mismatch_title"><xliff:g>%1$s</xliff:g>의 새 인증 요청</string>
+    <string name="wear_bt_pairing_mismatch_message">이 기기는 이전에 인증되었지만 지금은 다른 식별 토큰을 제시하고 있습니다. Wear OS 앱을 재설치하거나 데이터를 지웠을 때 이런 현상이 발생할 수 있습니다. 또한 블루투스 MAC 스푸핑 시도일 수도 있습니다.\n\n최근 이 시계에 Catima Wear OS 앱을 재설치한 경우에만 수락하십시오.</string>
+    <string name="open_settings">설정 열기</string>
+    <string name="open_in_gallery">사진 갤러리에서 열기</string>
+    <string name="settings_category_title_smartwatch">스마트워치 지원</string>
+    <string name="wear_bt_failed_foreground_notification_title">Wear OS 동기화 서비스 시작 실패</string>
+    <string name="wear_bt_critical_error_channel_name">Wear OS 동기화 치명적 오류</string>
+    <string name="wear_bt_channel_name">Wear OS 컴패니언</string>
+    <string name="wear_bt_notification_title">Catima Wear OS 동기화 활성화됨</string>
+    <string name="sort_by_most_recently_added">가장 최근에 추가함</string>
+    <string name="show_card_id">카드 ID 표시</string>
+    <string name="settings_wear_sync">Wear OS와 동기화</string>
+    <string name="settings_wear_sync_summary">Wear OS 연동 앱이 블루투스로 카드를 읽을 수 있도록 허용</string>
+    <string name="wear_sync_permission_required">Catima에서 Wear OS 스마트워치와 동기화하려면 거절하셨던 권한이 필요합니다</string>
+    <string name="zoomFrontImage">전면 사진 확대</string>
+    <string name="zoomBackImage">후면 사진 확대</string>
+    <string name="android_blocked_startup">Android에서 Wear OS 서비스 시작을 차단함</string>
 </resources>

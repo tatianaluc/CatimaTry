@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
     <string name="action_search">Поиск</string>
     <string name="action_add">Добавить</string>
-    <string name="noGiftCards">Нажмите кнопку \"+\" для добавления карты или используйте меню \"⋮\" для импортирования.</string>
+    <string name="noGiftCards">Нажмите кнопку \"+\" для добавления карты или используйте меню \"⋮\" для импортирования</string>
     <string name="noMatchingGiftCards">Ничего не найдено. Попробуйте изменить поисковый запрос.</string>
     <string name="storeName">Название</string>
     <string name="note">Примечание</string>
@@ -23,9 +23,9 @@
     <string name="noCardsMessage">Сначала добавьте карту</string>
     <string name="noCardExistsError">Карта не найдена</string>
     <string name="failedParsingImportUriError">Невозможно разобрать импортируемый URI</string>
-    <string name="importExport">Импорт/Экспорт</string>
+    <string name="importExport">Импорт/экспорт</string>
     <string name="exportName">Экспорт</string>
-    <string name="importExportHelp">Резервное копирование данных позволяет перенести их на другое устройство.</string>
+    <string name="importExportHelp">Резервное копирование данных позволяет перенести их на другое устройство</string>
     <string name="importSuccessfulTitle">Импортировано</string>
     <string name="importFailedTitle">Импорт не выполнен</string>
     <string name="importFailed">Невозможно выполнить импорт</string>
@@ -34,13 +34,10 @@
     <string name="exportFailed">Невозможно выполнить экспорт</string>
     <string name="importing">Импорт…</string>
     <string name="exporting">Экспорт…</string>
-    <string name="exportOptionExplanation">Данные будут сохранены в выбранное место.</string>
+    <string name="exportOptionExplanation">Данные будут сохранены в выбранное место</string>
     <string name="importOptionFilesystemTitle">Импорт из файла</string>
-    <string name="importOptionFilesystemExplanation">Выберете файл в файловой системе.</string>
+    <string name="importOptionFilesystemExplanation">Выберете файл в файловой системе</string>
     <string name="importOptionFilesystemButton">Выбрать файл</string>
-    <string name="importOptionApplicationTitle">Использование другого приложения</string>
-    <string name="importOptionApplicationExplanation">Используйте любое приложение или ваш любимый файловый менеджер, чтобы открыть файл.</string>
-    <string name="importOptionApplicationButton">Использовать другое приложение</string>
     <string name="about">О приложении</string>
     <string name="app_license">Авторское лево свободного программного обеспечения, лицензия GPLv3+</string>
     <string name="about_title_fmt">О приложении <xliff:g id="app_name">%s</xliff:g></string>
@@ -56,7 +53,7 @@
     <string name="intent_import_card_from_url_share_text">Я хочу поделиться с вами картой</string>
     <string name="exportSuccessful">Данные успешно экспортированы</string>
     <string name="all">Все</string>
-    <string name="noGroups">Нажмите кнопку \"+\", чтобы добавить группы для распределения записей.</string>
+    <string name="noGroups">Нажмите кнопку \"+\", чтобы добавить группы для распределения записей</string>
     <string name="groups">Группы</string>
     <string name="enter_group_name">Введите название группы</string>
     <string name="importSuccessful">Данные успешно импортированы</string>
@@ -69,7 +66,7 @@
     <string name="deleteConfirmationGroup">Удалить группу\?</string>
     <string name="leaveWithoutSaveConfirmation">Выйти без сохранения\?</string>
     <string name="leaveWithoutSaveTitle">Выход</string>
-    <string name="failedOpeningFileManager">Требуется файловый менеджер.</string>
+    <string name="failedOpeningFileManager">Требуется файловый менеджер</string>
     <string name="balanceSentence">Баланс: <xliff:g>%s</xliff:g></string>
     <string name="expiryStateSentenceExpired">Срок действия истёк: <xliff:g>%s</xliff:g></string>
     <string name="expiryStateSentence">Срок действия истекает: <xliff:g>%s</xliff:g></string>
@@ -89,7 +86,7 @@
     <string name="groupsList">Группы: <xliff:g>%s</xliff:g></string>
     <string name="moveDown">Перейти вниз</string>
     <string name="moveUp">Переместить выше</string>
-    <string name="settings_disable_lockscreen_while_viewing_card">Не давать блокировать экран</string>
+    <string name="settings_disable_lockscreen_while_viewing_card">Отображение на экране блокировки</string>
     <string name="settings_keep_screen_on">Не отключать экран</string>
     <plurals name="groupCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> карта</item>
@@ -98,16 +95,12 @@
         <item quantity="other"><xliff:g>%d</xliff:g> карт</item>
     </plurals>
     <string name="accept">Принять</string>
-    <string name="importVoucherVaultMessage">Выберите для импортирования файл <i>vouchervault.json</i>.
-\nФайл можно создать в приложении Voucher Vault, нажав кнопку \"Экспорт\".</string>
+    <string name="importVoucherVaultMessage">Выберите для импортирования файл, экспортированный из Voucher Vault. \nФайл можно создать в приложении Voucher Vault, нажав кнопку \"Экспорт\".</string>
     <string name="importVoucherVault">Импорт из Voucher Vault</string>
-    <string name="importFidmeMessage">Выберите для импортирования файл <i>fidme-export-request-xxxxxx.zip</i>, а затем вручную укажите типы штрих-кодов.
-\nФайл можно создать в приложении FidMe, перейдя в свой профиль, выбрав функцию \"Защита данных\", и затем нажав кнопку \"Извлечь мои данные\".</string>
-    <string name="importLoyaltyCardKeychainMessage">Выберите для импортирования файл <i>LoyaltyCardKeychain.csv</i>.
-\nФайл можно создать в приложении Loyalty Card Keychain, перейдя в меню \"Импорт/Экспорт\" и нажав кнопку \"Экспорт\".</string>
+    <string name="importFidmeMessage">Выберите для импортирования файл, экспортированный из FidMe, а затем вручную укажите типы штрих-кодов. \nФайл можно создать в приложении FidMe, перейдя в свой профиль, выбрав функцию \"Защита данных\", и затем нажав кнопку \"Извлечь мои данные\".</string>
+    <string name="importLoyaltyCardKeychainMessage">Выберите для импортирования файл, экспортированный из Loyalty Card Keychain. \nФайл можно создать в приложении Loyalty Card Keychain, перейдя в меню \"Импорт/Экспорт\" и нажав кнопку \"Экспорт\".</string>
     <string name="importLoyaltyCardKeychain">Импорт из Loyalty Card Keychain</string>
-    <string name="importCatimaMessage">Выберите для импортирования файл <i>Catima.zip</i>.
-\nФайл можно создать в другой копии Catima, перейдя в меню \"Импорт/Экспорт\" и нажав кнопку \"Экспорт\".</string>
+    <string name="importCatimaMessage">Выберите для импортирования файл, экспортированный из Catima. \nФайл можно создать в другой копии Catima, перейдя в меню \"Импорт/экспорт\" и нажав кнопку \"Экспорт\".</string>
     <string name="importFidme">Импорт из FidMe</string>
     <string name="importCatima">Импорт из Catima</string>
     <string name="errorReadingImage">Невозможно считать изображение</string>
@@ -118,8 +111,8 @@
     <string name="barcodeId">Значение штрих-кода</string>
     <string name="unsupportedBarcodeType">В настоящее время данный тип штрих-кодов не отображается. Его поддержка может быть добавлена в следующих версиях приложения.</string>
     <string name="wrongValueForBarcodeType">Недопустимое значение для выбранного типа штрих-кода</string>
-    <string name="app_resources">Свободные сторонние ресурсы: <xliff:g id="app_resources_list">%s</xliff:g></string>
-    <string name="app_libraries">Свободные сторонние библиотеки: <xliff:g id="app_libraries_list">%s</xliff:g></string>
+    <string name="app_resources">Сторонние ресурсы: <xliff:g id="app_resources_list">%s</xliff:g></string>
+    <string name="app_libraries">Сторонние библиотеки: <xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Авторские права © 2019–<xliff:g>%d</xliff:g> Sylvia van Os и помощники</string>
     <string name="intent_import_card_from_url_share_multiple_text">Поделиться картами</string>
     <string name="updateBarcodeQuestionText">Вы изменили номер. Обновить также значение штрих-кода, чтобы использовалось одинаковое значение\?</string>
@@ -133,11 +126,8 @@
     <string name="backImageDescription">Задняя сторона</string>
     <string name="frontImageDescription">Лицевая сторона</string>
     <string name="photos">Фото</string>
-    <string name="importStocardMessage">Выберите для импортирования файл <i>***.zip</i>.
-\nЭтот файл можно получить по электронной почте от support@stocardapp.com, предварительно запросив экспорт ваших данных.</string>
     <string name="passwordRequired">Введите пароль</string>
-    <string name="importStocard">Импорт из Stocard</string>
-    <string name="failedGeneratingShareURL">Невозможно создать URL для обмена. Пожалуйста, сообщите об этом.</string>
+    <string name="failedGeneratingShareURL">Невозможно создать URL для обмена</string>
     <string name="turn_flashlight_off">Отключить вспышку</string>
     <string name="turn_flashlight_on">Включить вспышку</string>
     <plurals name="selectedCardCount">
@@ -162,15 +152,6 @@
     </plurals>
     <string name="settings_system_locale">Системный</string>
     <string name="settings_locale">Язык</string>
-    <string name="settings_sky_blue_theme">Голубой</string>
-    <string name="settings_catima_theme">Catima</string>
-    <string name="settings_brown_theme">Коричневый</string>
-    <string name="settings_green_theme">Зелёный</string>
-    <string name="settings_blue_theme">Синий</string>
-    <string name="settings_violet_theme">Фиолетовый</string>
-    <string name="settings_magenta_theme">Пурпурный</string>
-    <string name="settings_pink_theme">Розовый</string>
-    <string name="settings_theme_color">Цвет темы</string>
     <string name="app_contributors">Создано при поддержке: <xliff:g id="app_contributors">%s</xliff:g></string>
     <string name="noGroupCards">Группа пуста</string>
     <string name="barcodeImageDescriptionWithType">Изображение штрих-кода <xliff:g>%s</xliff:g></string>
@@ -197,7 +178,7 @@
     <string name="editGroup">Редактирование группы: <xliff:g>%s</xliff:g></string>
     <string name="group_edit">Изменить группу</string>
     <string name="group_name_already_in_use">Такое название группы уже существует</string>
-    <string name="noGiftCardsGroup">Создайте несколько карт, а затем распределите их по группам здесь.</string>
+    <string name="noGiftCardsGroup">Создайте несколько карт, а затем распределите их по группам здесь</string>
     <string name="setIcon">Выбор миниатюры</string>
     <string name="selectColor">Выбрать цвет</string>
     <string name="translate_platform">на Weblate</string>
@@ -213,17 +194,12 @@
     </plurals>
     <string name="settings_oled_dark">Чёрный фон для тёмной темы</string>
     <string name="include_if_asking_support">Если вы хотите запросить поддержку, укажите следующую информацию:</string>
-    <string name="settings_portrait_orientation">Портретная</string>
-    <string name="settings_landscape_orientation">Альбомная</string>
-    <string name="settings_lock_on_opening_orientation">Фиксировать ориентацию при открытии карты</string>
     <string name="archive">Архивировать</string>
     <string name="unarchive">Разархивировать</string>
-    <string name="settings_follow_system_orientation">Как в системе</string>
     <string name="duplicateCard">Дублировать</string>
-    <string name="settings_card_orientation">Ориентация экрана</string>
     <string name="archived">Карта архивирована</string>
     <string name="unarchived">Карта разархивирована</string>
-    <string name="failedLaunchingPhotoPicker">Не найдено поддерживаемое приложение галереи</string>
+    <string name="failedLaunchingPhotoPicker">Не найдено приложение для выбора изображений</string>
     <plurals name="groupCardCountWithArchived">
         <item quantity="one"><xliff:g>%1$d</xliff:g> карта (<xliff:g id="archivedCount">%2$d</xliff:g> архивирована)</item>
         <item quantity="few"><xliff:g>%1$d</xliff:g> карты (<xliff:g id="archivedCount">%2$d</xliff:g> архивированы)</item>
@@ -235,7 +211,6 @@
     <string name="welcome">Добро пожаловать в Catima</string>
     <string name="failedToOpenUrl">Сначала необходимо установить браузер</string>
     <string name="failedToRetrieveImageFile">Невозможно получить файл изображения</string>
-    <string name="barcodeLongPressMessage">В приложении галереи можно открывать только изображения</string>
     <string name="noCameraPermissionDirectToSystemSetting">Для сканирования штрих-кодов Catima требуется доступ к камере устройства. Нажмите здесь, чтобы изменить настройки разрешений.</string>
     <string name="updateBalance">Обновить баланс</string>
     <string name="newBalanceSentence">Новый баланс: <xliff:g>%s</xliff:g></string>
@@ -251,12 +226,10 @@
     <string name="chooseValidFromDate">Выбор даты действия</string>
     <string name="validFromSentence">Действует с: <xliff:g>%s</xliff:g></string>
     <string name="setBarcodeHeight">Указать высоту штрих-кода</string>
-    <string name="height">Высота:</string>
+    <string name="height">Высота</string>
     <string name="switchToBarcode">Переключить на штрих-код</string>
     <string name="switchToFrontImage">Переключить на лицевую сторону</string>
     <string name="switchToBackImage">Переключить на заднюю сторону</string>
-    <string name="openFrontImageInGalleryApp">Открыть лицевое изображение в приложении галереи</string>
-    <string name="openBackImageInGalleryApp">Открыть заднее изображение в приложении галереи</string>
     <string name="donate">Пожертвовать</string>
     <string name="icon_header_click_text">Долгое нажатие для редактирования</string>
     <string name="show_note">Показывать примечание</string>
@@ -265,14 +238,14 @@
     <string name="show_balance">Показывать баланс</string>
     <string name="permissionReadCardsDescription">чтение ваших карт Catima и всех их данных, включая заметки и изображения</string>
     <string name="permissionReadCardsLabel">Чтение карт Catima</string>
-    <string name="settings_allow_content_provider_read_summary">Приложениям по-прежнему придётся запрашивать разрешение для получения доступа</string>
-    <string name="settings_allow_content_provider_read_title">Разрешать другим приложениям доступ к моим данным</string>
+    <string name="settings_allow_content_provider_read_summary">Разрешить приложению Gadgetbridge синхронизировать ваши карты с поддерживаемыми часами</string>
+    <string name="settings_allow_content_provider_read_title">Синхронизация с Gadgetbridge</string>
     <string name="settings_category_title_privacy">Конфиденциальность</string>
     <string name="settings_display_barcode_max_brightness_summary">Необходимо для работы некоторых сканеров</string>
-    <string name="settings_keep_screen_on_summary">Отключение функции автоотключения экрана при отображении карты</string>
+    <string name="settings_keep_screen_on_summary">Увеличить время до автоотключения экрана при отображении карты</string>
     <string name="settings_category_title_cards">Отображение карт</string>
     <string name="settings_category_title_general">Общие</string>
-    <string name="settings_disable_lockscreen_while_viewing_card_summary">Отключение функции блокировки экрана при отображении карты</string>
+    <string name="settings_disable_lockscreen_while_viewing_card_summary">Обход функции блокировки экрана при отображении карты</string>
     <string name="settings_oled_dark_summary">Снижение расхода заряда батареи на OLED-экранах</string>
     <string name="view_online">Просмотр в сети</string>
     <string name="app_copyright_short">Авторское право © Sylvia van Os и помощники</string>
@@ -287,10 +260,9 @@
     <string name="addWithoutBarcode">Добавить карту без штрих-кода</string>
     <string name="field_must_not_be_empty">Поле не может быть пустым</string>
     <string name="app_name">Catima</string>
-    <string name="settings_follow_sensor_orientation">Всегда поворачивать (игнорировать системные настройки)</string>
     <string name="add_manually_warning_title">Рекомендуется сканирование</string>
     <string name="continue_">Продолжить</string>
-    <string name="add_manually_warning_message">В некоторых магазинах значение штрих-кода отличается от написанного на карте номера, из-за чего введение штрих-кода вручную не всегда работает. Вместо этого настоятельно рекомендуется отсканировать штрих-код камерой. Продолжить?</string>
+    <string name="add_manually_warning_message">В некоторых картах значение штрих-кода отличается от написанного на карте номера, из-за чего введение штрих-кода вручную не всегда работает. Вместо этого рекомендуется отсканировать штрих-код камерой. Продолжить?</string>
     <string name="spend">Потрачено</string>
     <string name="receive">Получено</string>
     <string name="amountParsingFailed">Недопустимая сумма</string>
@@ -318,7 +290,77 @@
     <string name="settings_column_count_5">5</string>
     <string name="settings_column_count_6">6</string>
     <string name="unsupportedFile">Данный файл не поддерживается</string>
-    <string name="addFromPkpass">Выбрать файл Passbook (.pkpass)</string>
-    <string name="generic_error_please_retry">Извините, что-то пошло не так, попробуйте ещё раз…</string>
+    <string name="addFromPkpass">Выбрать файл Passbook (.pkpass / .pkpasses)</string>
+    <string name="generic_error_please_retry">Произошла ошибка</string>
     <string name="sort_by_valid_from">Начало действия</string>
+    <string name="width">Ширина</string>
+    <string name="setBarcodeWidth">Указать ширину штрих-кода</string>
+    <string name="card_list_widget_name">Список карт</string>
+    <string name="card_list_widget_empty">После добавления карт лояльности в Catima, они появятся здесь. Если у вас есть карты, убедитесь, что они не архивированы.</string>
+    <string name="cardWithNumber">Карта <xliff:g>%d</xliff:g></string>
+    <string name="cardWithNumberAndLocale">Карта <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
+    <string name="pleaseDoNotRotateTheDevice">Не поворачивайте устройство, так как это отменит действие</string>
+    <string name="acra_catima_has_crashed">К сожалению, в <xliff:g id="app_name">%s</xliff:g> произошёл сбой. Помогите исправить проблему, отправив нам отчёт об ошибке.</string>
+    <string name="acra_explain_crash">Если возможно, добавьте больше информации о том, что произошло:</string>
+    <string name="acra_crash_email_subject">Отчёт об ошибке в <xliff:g id="app_name">%s</xliff:g></string>
+    <string name="pref_enable_acra">Запрашивать отправку отчётов об ошибках</string>
+    <string name="pref_enable_acra_summary">Если включено, то в случае сбоя вам будет предложено отправить отчёт о нём. Отчёты никогда не отправляются автоматически.</string>
+    <string name="copy_value">Скопировать значение</string>
+    <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
+    <string name="nothing_to_copy">Значение не найдено</string>
+    <string name="barcodeEncoding">Кодировка штрих-кода</string>
+    <string name="back">Назад</string>
+    <string name="settings_disable_nfc_while_viewing_card_summary">Приостанавливать работу NFC для предотвращения срабатывание NFC-платежей при просмотре карты</string>
+    <string name="settings_disable_nfc_while_viewing_card">Отключать NFC</string>
+    <string name="nfc_blocked_while_viewing_card">NFC приостановлен</string>
+    <string name="change_settings">Изменить настройки</string>
+    <string name="nfc_block_system_error">Приостановка NFC невозможна</string>
+    <string name="sort_by_most_recently_added">Порядок добавления</string>
+    <string name="show_card_id">Показывать номер карты</string>
+    <string name="zoomFrontImage">Масштабирование лицевого изображения</string>
+    <string name="zoomBackImage">Масштабирование заднего изображения</string>
+    <string name="open_in_gallery">Открыть в галерее</string>
+    <string name="settings_wear_sync">Синхронизация с Wear OS</string>
+    <string name="settings_wear_sync_summary">Разрешить приложению-компаньону Wear OS читать ваши карты по Bluetooth</string>
+    <string name="wear_sync_permission_required">Для синхронизации умными часами Wear OS Catima требуются разрешения, в которых ранее было отказано</string>
+    <string name="settings_wear_sync_devices">Доверенные устройства Wear OS</string>
+    <string name="settings_wear_sync_devices_summary">Управление устройствами, которым разрешена синхронизация по Bluetooth</string>
+    <string name="settings_wear_sync_no_devices">Нет доверенных устройств</string>
+    <plurals name="settings_wear_sync_devices_summary_count">
+        <item quantity="one"><xliff:g>%d</xliff:g> доверенное устройство</item>
+        <item quantity="few"><xliff:g>%d</xliff:g> доверенных устройства</item>
+        <item quantity="many"><xliff:g>%d</xliff:g> доверенных устройств</item>
+        <item quantity="other"><xliff:g>%d</xliff:g> доверенных устройств</item>
+    </plurals>
+    <string name="settings_wear_sync_blocked_devices">Заблокированные устройства Wear OS</string>
+    <string name="settings_wear_sync_blocked_devices_summary">Управление заблокированными устройствами Wear OS</string>
+    <string name="settings_wear_sync_no_blocked_devices">Нет заблокированных устройств</string>
+    <plurals name="settings_wear_sync_blocked_devices_summary_count">
+        <item quantity="one"><xliff:g>%d</xliff:g> заблокированное устройство</item>
+        <item quantity="few"><xliff:g>%d</xliff:g> заблокированных устройства</item>
+        <item quantity="many"><xliff:g>%d</xliff:g> заблокированных устройств</item>
+        <item quantity="other"><xliff:g>%d</xliff:g> заблокированных устройств</item>
+    </plurals>
+    <string name="settings_wear_sync_unpair_title">Удалить устройство?</string>
+    <string name="settings_wear_sync_unpair_message">Удалить <xliff:g>%1$s</xliff:g> из Catima? Он больше не сможет синхронизировать ваши карты.</string>
+    <string name="settings_wear_sync_unblock_message">Удалить устройство <xliff:g>%1$s</xliff:g> из списка заблокированных? Оно снова сможет запросить доступ.</string>
+    <string name="settings_wear_sync_unpair">Удалить</string>
+    <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
+    <string name="settings_wear_sync_tap_to_remove">Нажмите на устройство, чтобы удалить его.</string>
+    <string name="wear_bt_pairing_channel_name">Сопряжение устройства Wear OS</string>
+    <string name="wear_bt_pairing_title">Устройство Wear OS запрашивает синхронизацию</string>
+    <string name="wear_bt_pairing_message">Разрешить устройству <xliff:g>%1$s</xliff:g> доступ к вашим картам?</string>
+    <string name="wear_bt_pairing_allow">Разрешить</string>
+    <string name="wear_bt_pairing_block">Заблокировать</string>
+    <string name="wear_bt_pairing_allowed">Устройству <xliff:g>%1$s</xliff:g> разрешена синхронизация.</string>
+    <string name="wear_bt_pairing_blocked">Устройство <xliff:g>%1$s</xliff:g> заблокировано.</string>
+    <string name="wear_bt_pairing_mismatch_title">Новый запрос на авторизацию от <xliff:g>%1$s</xliff:g></string>
+    <string name="wear_bt_pairing_mismatch_message">Данное устройство ранее было авторизовано, но теперь предоставляет другой токен идентификации. Это происходит, когда приложение Wear OS переустанавливается или его данные очищаются. Также это может указывать на попытку подделать MAC-адрес Bluetooth.\n\nРазрешайте только в том случае, если вы недавно переустановили приложение Catima Wear OS на этих часах.</string>
+    <string name="open_settings">Открыть настройки</string>
+    <string name="wear_bt_channel_name">Компаньон Wear OS</string>
+    <string name="wear_bt_notification_title">Синхронизация Catima с Wear OS активна</string>
+    <string name="settings_category_title_smartwatch">Поддержка умных часов</string>
+    <string name="wear_bt_failed_foreground_notification_title">Невозможно запустить службу синхронизации Wear OS</string>
+    <string name="wear_bt_critical_error_channel_name">Критическая ошибка синхронизации Wear OS</string>
+    <string name="android_blocked_startup">Android блокирует запуск службы Wear OS</string>
 </resources>

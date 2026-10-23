@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -18,6 +19,8 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.text.Layout;
@@ -27,6 +30,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,8 +41,10 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.graphics.ColorUtils;
+import androidx.core.graphics.Insets;
 import androidx.core.os.LocaleListCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.core.widget.TextViewCompat;
 import androidx.exifinterface.media.ExifInterface;
@@ -46,13 +52,15 @@ import androidx.palette.graphics.Palette;
 
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.LuminanceSource;
 import com.google.zxing.MultiFormatReader;
+import com.google.zxing.DecodeHintType;
 import com.google.zxing.NotFoundException;
 import com.google.zxing.RGBLuminanceSource;
 import com.google.zxing.Result;
-import com.google.zxing.common.HybridBinarizer;
+import com.google.zxing.common.GlobalHistogramBinarizer;
 import com.google.zxing.multi.GenericMultipleBarcodeReader;
 import com.google.zxing.multi.MultipleBarcodeReader;
 
@@ -78,15 +86,17 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Currency;
 import java.util.Date;
+import java.util.EnumMap;
 import java.util.GregorianCalendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import protect.card_locker.preferences.Settings;
+import protect.card_locker.shared.ForegroundColorHelper;
 
 public class Utils {
     private static final String TAG = "Catima";
@@ -107,10 +117,18 @@ public class Utils {
 
     public static final String CARD_IMAGE_FILENAME_REGEX = "^(card_)(\\d+)(_(?:front|back|icon)\\.png)$";
 
-    static final double LUMINANCE_MIDPOINT = 0.5;
-
     static final int BITMAP_SIZE_SMALL = 512;
-    static final int BITMAP_SIZE_BIG = 2048;
+    static final int BITMAP_SIZE_BIG = 1600;
+
+    // Displays the toast immediately on the main UI loop, or asks Android to display it there otherwise.
+    static public void showToast(Context context, int message, int duration) {
+        if (Looper.myLooper() == Looper.getMainLooper()) {
+            Toast.makeText(context, message, duration).show();
+        } else {
+            new Handler(Looper.getMainLooper()).post(
+                    () -> Toast.makeText(context, message, duration).show());
+        }
+    }
 
     static public LetterBitmap generateIcon(Context context, LoyaltyCard loyaltyCard, boolean forShortcut) {
         return generateIcon(context, loyaltyCard.store, loyaltyCard.headerColor, forShortcut);
@@ -135,71 +153,61 @@ public class Utils {
         int pixelSize = context.getResources().getDimensionPixelSize(R.dimen.tileLetterImageSize);
 
         if (backgroundColor == null) {
-            backgroundColor = LetterBitmap.getDefaultColor(context, store);
+            backgroundColor = LetterBitmap.Companion.getDefaultColor(context, store);
         }
 
         return new LetterBitmap(context, store, store,
-                tileLetterFontSize, pixelSize, pixelSize, backgroundColor, needsDarkForeground(backgroundColor) ? Color.BLACK : Color.WHITE);
+                tileLetterFontSize, pixelSize, pixelSize, backgroundColor, ForegroundColorHelper.Companion.needsDarkForeground(backgroundColor) ? Color.BLACK : Color.WHITE);
     }
 
-    static public boolean needsDarkForeground(Integer backgroundColor) {
-        return ColorUtils.calculateLuminance(backgroundColor) > LUMINANCE_MIDPOINT;
-    }
-
-    static public List<ParseResult> retrieveBarcodesFromImage(Context context, Uri uri) {
+    static public List<ParseResult> retrieveBarcodesFromImage(Context context, Uri uri) throws FileNotFoundException {
         Log.i(TAG, "Received image file with possible barcode");
 
         if (uri == null) {
-            Log.e(TAG, "Uri did not contain any data");
-            Toast.makeText(context, R.string.errorReadingImage, Toast.LENGTH_LONG).show();
-            return new ArrayList<>();
+            throw new FileNotFoundException("Uri did not contain any data");
         }
 
         Bitmap bitmap;
         try {
             bitmap = retrieveImageFromUri(context, uri);
         } catch (IOException e) {
-            Log.e(TAG, "Error getting data from image file");
-            e.printStackTrace();
-            Toast.makeText(context, R.string.errorReadingImage, Toast.LENGTH_LONG).show();
-            return new ArrayList<>();
+            throw new IllegalArgumentException("Error reading image file", e);
         }
 
-        List<ParseResult> barcodesFromBitmap = getBarcodesFromBitmap(bitmap);
-
-        if (barcodesFromBitmap.isEmpty()) {
-            Log.i(TAG, "No barcode found in image file");
-            Toast.makeText(context, R.string.noBarcodeFound, Toast.LENGTH_LONG).show();
-        }
-
-        return barcodesFromBitmap;
+        // Returns barcodes or an empty list if nothing found
+        return getBarcodesFromBitmap(bitmap);
     }
 
-    static public List<ParseResult> retrieveBarcodesFromPkPass(Context context, Uri uri) {
+    static public List<ParseResult> retrieveBarcodesFromPkPass(Context context, Uri uri) throws FileNotFoundException {
         Log.i(TAG, "Received Pkpass file with possible barcode");
         if (uri == null) {
-            Log.e(TAG, "Pkpass did not contain any data");
-            Toast.makeText(context, R.string.errorReadingFile, Toast.LENGTH_LONG).show();
-            return new ArrayList<>();
+            throw new FileNotFoundException("Uri did not contain any data");
         }
 
         PkpassParser pkpassParser;
         try {
              pkpassParser = new PkpassParser(context, uri);
         } catch (Exception e) {
-            Log.e(TAG, "Error reading pkpass file", e);
-            Toast.makeText(context, R.string.errorReadingFile, Toast.LENGTH_LONG).show();
-            return new ArrayList<>();
+            throw new IllegalArgumentException("Error reading pkpass file", e);
         }
 
         List<String> locales = pkpassParser.listLocales();
         if (locales.isEmpty()) {
-            return Collections.singletonList(new ParseResult(ParseResultType.FULL, pkpassParser.toLoyaltyCard(null)));
+            try {
+                return Collections.singletonList(new ParseResult(ParseResultType.FULL, pkpassParser.toLoyaltyCard(null)));
+            } catch (Exception e) {
+                throw new IllegalArgumentException("Error calling toLoyaltyCard on pkpass file", e);
+            }
         }
 
         List<ParseResult> parseResultList = new ArrayList<>();
         for (String locale : locales) {
-            ParseResult parseResult = new ParseResult(ParseResultType.FULL, pkpassParser.toLoyaltyCard(locale));
+            ParseResult parseResult;
+            try {
+                 parseResult = new ParseResult(ParseResultType.FULL, pkpassParser.toLoyaltyCard(locale));
+            } catch (Exception e) {
+                throw new IllegalArgumentException("Error calling toLoyaltyCard on pkpass file", e);
+            }
             parseResult.setNote(locale);
             parseResultList.add(parseResult);
         }
@@ -207,12 +215,54 @@ public class Utils {
         return parseResultList;
     }
 
-    static public List<ParseResult> retrieveBarcodesFromPdf(Context context, Uri uri) {
+    static public List<ParseResult> retrieveBarcodesFromPkPasses(Context context, Uri uri) throws FileNotFoundException {
+        Log.i(TAG, "Received Pkpasses file with possible barcode");
+        if (uri == null) {
+            throw new FileNotFoundException("Uri did not contain any data");
+        }
+
+        PkpassesParser pkpassesParser;
+        try {
+            pkpassesParser = new PkpassesParser(context, uri);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Error reading pkpasses file", e);
+        }
+
+        List<ParseResult> parseResultList = new ArrayList<>();
+        int i = 0;
+        for (PkpassParser pkpassParser : pkpassesParser.getPkpassParsers()) {
+            ParseResult parseResult;
+            List<String> locales = pkpassParser.listLocales();
+            if (locales.isEmpty()) {
+                try {
+                    parseResult = new ParseResult(ParseResultType.FULL, pkpassParser.toLoyaltyCard(null));
+                } catch (Exception e) {
+                    throw new IllegalArgumentException("Error calling toLoyaltyCard on pkpass file", e);
+                }
+                parseResult.setNote(String.format(context.getString(R.string.cardWithNumber), i+1));
+                parseResultList.add(parseResult);
+            } else {
+                for (String locale : locales) {
+                    try {
+                        parseResult = new ParseResult(ParseResultType.FULL, pkpassParser.toLoyaltyCard(locale));
+                    } catch (Exception e) {
+                        throw new IllegalArgumentException("Error calling toLoyaltyCard on pkpass file", e);
+                    }
+                    parseResult.setNote(String.format(context.getString(R.string.cardWithNumberAndLocale), i+1, locale));
+                    parseResultList.add(parseResult);
+                }
+            }
+
+            i++;
+        }
+
+        return parseResultList;
+    }
+
+    static public List<ParseResult> retrieveBarcodesFromPdf(Context context, Uri uri) throws FileNotFoundException {
         Log.i(TAG, "Received PDF file with possible barcode");
         if (uri == null) {
-            Log.e(TAG, "Uri did not contain any data");
-            Toast.makeText(context, R.string.errorReadingFile, Toast.LENGTH_LONG).show();
-            return new ArrayList<>();
+            throw new FileNotFoundException("Uri did not contain any data");
         }
 
         ParcelFileDescriptor parcelFileDescriptor = null;
@@ -247,8 +297,7 @@ public class Utils {
                 }
             }
         } catch (IOException e) {
-            Log.e(TAG, "Error reading PDF file", e);
-            Toast.makeText(context, R.string.errorReadingFile, Toast.LENGTH_LONG).show();
+            throw new IllegalArgumentException("Error reading PDF file", e);
         } finally {
             // Resource handling
             if (renderer != null) {
@@ -263,10 +312,7 @@ public class Utils {
             }
         }
 
-        if (barcodesFromPdfPages.isEmpty()) {
-            Log.i(TAG, "No barcode found in pdf file");
-            Toast.makeText(context, R.string.noBarcodeFound, Toast.LENGTH_LONG).show();
-        }
+        // Returns barcodes or an empty list if nothing found
         return barcodesFromPdfPages;
     }
 
@@ -281,6 +327,7 @@ public class Utils {
      * @param context
      * @return List<ParseResult>
      */
+    @Nullable
     static public List<ParseResult> parseSetBarcodeActivityResult(int requestCode, int resultCode, Intent intent, Context context) {
         String contents;
         String format;
@@ -289,16 +336,35 @@ public class Utils {
             return new ArrayList<>();
         }
 
-        if (requestCode == Utils.BARCODE_IMPORT_FROM_IMAGE_FILE) {
-            return retrieveBarcodesFromImage(context, intent.getData());
-        }
+        try {
+            if (requestCode == Utils.BARCODE_IMPORT_FROM_IMAGE_FILE) {
+                return retrieveBarcodesFromImage(context, intent.getData());
+            }
 
-        if (requestCode == Utils.BARCODE_IMPORT_FROM_PDF_FILE) {
-            return retrieveBarcodesFromPdf(context, intent.getData());
-        }
+            if (requestCode == Utils.BARCODE_IMPORT_FROM_PDF_FILE) {
+                return retrieveBarcodesFromPdf(context, intent.getData());
+            }
 
-        if (requestCode == Utils.BARCODE_IMPORT_FROM_PKPASS_FILE) {
-            return retrieveBarcodesFromPkPass(context, intent.getData());
+            if (requestCode == Utils.BARCODE_IMPORT_FROM_PKPASS_FILE) {
+                Uri intentData = intent != null ? intent.getData() : null;
+
+                if (intentData == null) {
+                    throw new FileNotFoundException("Uri did not contain any data");
+                }
+
+                // Mime type info is not always available. So we're going to first guess it's a pkpass file and if that fails, try pkpasses
+                try {
+                    return retrieveBarcodesFromPkPass(context, intentData);
+                } catch (Exception e) {
+                    Log.e(TAG, "Error reading pkpass file, attempting as pkpasses file", e);
+                    return retrieveBarcodesFromPkPasses(context, intentData);
+                }
+            }
+        } catch (Exception e) {
+            // Return null instead of an empty list to differentiate between error or no result
+            Log.e(TAG, "Parsing failed: " + e);
+            e.printStackTrace();
+            return null;
         }
 
         if (requestCode == Utils.BARCODE_SCAN || requestCode == Utils.SELECT_BARCODE_REQUEST) {
@@ -364,14 +430,17 @@ public class Utils {
 
         // ...and then turned into a binary bitmap from its luminance
         LuminanceSource source = new RGBLuminanceSource(bitmap.getWidth(), bitmap.getHeight(), intArray);
-        BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(source));
+        BinaryBitmap binaryBitmap = new BinaryBitmap(new GlobalHistogramBinarizer(source));
 
         List<ParseResult> parseResultList = new ArrayList<>();
         try {
             MultiFormatReader multiFormatReader = new MultiFormatReader();
             MultipleBarcodeReader multipleBarcodeReader = new GenericMultipleBarcodeReader(multiFormatReader);
 
-            Result[] barcodeResults = multipleBarcodeReader.decodeMultiple(binaryBitmap);
+            Map<DecodeHintType, Object> hints = new EnumMap<>(DecodeHintType.class);
+            hints.put(DecodeHintType.ALSO_INVERTED, Boolean.TRUE);
+
+            Result[] barcodeResults = multipleBarcodeReader.decodeMultiple(binaryBitmap,hints);
 
             for (Result barcodeResult : barcodeResults) {
                 Log.i(TAG, "Read barcode id: " + barcodeResult.getText());
@@ -571,6 +640,11 @@ public class Utils {
 
         double width = bitmap.getWidth();
         double height = bitmap.getHeight();
+
+        // Early exit
+        if (Math.max(width, height) <= maxSize) {
+            return bitmap;
+        }
 
         if (height > width) {
             double scale = height / maxSize;
@@ -821,7 +895,7 @@ public class Utils {
 
     public static File copyToTempFile(Context context, InputStream input, String name) throws IOException {
         File file = createTempFile(context, name);
-        try (input; FileOutputStream out = new FileOutputStream(file)) {
+        try (FileOutputStream out = new FileOutputStream(file)) {
             byte[] buf = new byte[4096];
             int len;
             while ((len = input.read(buf)) != -1) {
@@ -870,31 +944,9 @@ public class Utils {
     // replace colors in the current theme
     public static void patchColors(AppCompatActivity activity) {
         Settings settings = new Settings(activity);
-        String color = settings.getColor();
 
         Resources.Theme theme = activity.getTheme();
-        Resources resources = activity.getResources();
-        if (color.equals(resources.getString(R.string.settings_key_pink_theme))) {
-            theme.applyStyle(R.style.pink, true);
-        } else if (color.equals(resources.getString(R.string.settings_key_magenta_theme))) {
-            theme.applyStyle(R.style.magenta, true);
-        } else if (color.equals(resources.getString(R.string.settings_key_violet_theme))) {
-            theme.applyStyle(R.style.violet, true);
-        } else if (color.equals(resources.getString(R.string.settings_key_blue_theme))) {
-            theme.applyStyle(R.style.blue, true);
-        } else if (color.equals(resources.getString(R.string.settings_key_sky_blue_theme))) {
-            theme.applyStyle(R.style.skyblue, true);
-        } else if (color.equals(resources.getString(R.string.settings_key_green_theme))) {
-            theme.applyStyle(R.style.green, true);
-        } else if (color.equals(resources.getString(R.string.settings_key_brown_theme))) {
-            theme.applyStyle(R.style.brown, true);
-        } else if (color.equals(resources.getString(R.string.settings_key_catima_theme))) {
-            // catima theme is AppTheme itself, no dynamic colors nor applyStyle
-        } else {
-            // final catch all in case of invalid theme value from older versions
-            // also handles R.string.settings_key_system_theme
-            DynamicColors.applyToActivityIfAvailable(activity);
-        }
+        DynamicColors.applyToActivityIfAvailable(activity);
 
         if (isDarkModeEnabled(activity) && settings.getOledDark()) {
             theme.applyStyle(R.style.DarkBackground, true);
@@ -999,7 +1051,10 @@ public class Utils {
 
         if (icon != null) {
             // Use header colour to decide if this image will need a white or black background
-            backgroundOrIcon.setBackgroundColor(needsDarkForeground(headerColor) ? Color.BLACK : Color.WHITE);
+            backgroundOrIcon.setBackgroundColor(ForegroundColorHelper.Companion.needsDarkForeground(headerColor) ? Color.BLACK : Color.WHITE);
+
+            // Ensure correct cropping style
+            backgroundOrIcon.setScaleType(Utils.getRecommendedScaleTypeForThumbnailImage(icon));
 
             textWhenNoImage.setVisibility(View.GONE);
         } else {
@@ -1026,14 +1081,14 @@ public class Utils {
             // Actually set the text and colour
             textWhenNoImage.setVisibility(View.VISIBLE);
             textWhenNoImage.setText(loyaltyCard.store);
-            textWhenNoImage.setTextColor(Utils.needsDarkForeground(headerColor) ? Color.BLACK : Color.WHITE);
+            textWhenNoImage.setTextColor(ForegroundColorHelper.Companion.needsDarkForeground(headerColor) ? Color.BLACK : Color.WHITE);
         }
 
         return headerColor;
     }
 
     public static int getHeaderColor(Context context, LoyaltyCard loyaltyCard) {
-        return loyaltyCard.headerColor != null ? loyaltyCard.headerColor : LetterBitmap.getDefaultColor(context, loyaltyCard.store);
+        return loyaltyCard.headerColor != null ? loyaltyCard.headerColor : LetterBitmap.Companion.getDefaultColor(context, loyaltyCard.store);
     }
 
     public static String checksum(InputStream input) throws IOException {
@@ -1092,5 +1147,93 @@ public class Utils {
         } catch (CameraAccessException e) {
             return false;
         }
+    }
+
+    public static void applyWindowInsets(View root) {
+        /* This function basically fakes the activity being edge-to-edge. Useful for those activities that are really hard to get to behave well */
+        ViewCompat.setOnApplyWindowInsetsListener(root, (view, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+
+            ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            layoutParams.leftMargin = insets.left;
+            layoutParams.bottomMargin = insets.bottom;
+            layoutParams.rightMargin = insets.right;
+            layoutParams.topMargin = insets.top;
+            view.setLayoutParams(layoutParams);
+
+            return WindowInsetsCompat.CONSUMED;
+        });
+    }
+    
+    public static void applyWindowInsetsAndFabOffset(View root, FloatingActionButton fab) {
+        /* This function is a copy of applyWindowInsets, with the added behaviour that it ensures the FAB will be displayed vertically above the keyboard at all times */
+        ViewCompat.setOnApplyWindowInsetsListener(root, (view, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+            
+            ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            layoutParams.leftMargin = insets.left;
+            layoutParams.bottomMargin = insets.bottom;
+            layoutParams.rightMargin = insets.right;
+            layoutParams.topMargin = insets.top;
+            view.setLayoutParams(layoutParams);
+            
+            // This is required to move the FAB above the keyboard when keyboard is open
+            Insets imeInsets = windowInsets.getInsets(WindowInsetsCompat.Type.ime());
+            boolean isKeyboardVisible = windowInsets.isVisible(WindowInsetsCompat.Type.ime());
+            fab.setTranslationY(isKeyboardVisible ? (- imeInsets.bottom) : 0);
+            
+            return WindowInsetsCompat.CONSUMED;
+        });
+    }
+
+    public static ImageView.ScaleType getRecommendedScaleTypeForThumbnailImage(@Nullable Bitmap image) {
+        // Return something sensible if no image
+        if (image == null) {
+            return ImageView.ScaleType.FIT_CENTER;
+        }
+
+        // If the image is relatively close to 85.6:53.98 (width = 1.58577250834 * height), allow cropping it to fit it
+        double ratio = (double) image.getWidth() / image.getHeight();
+        if (ratio >= 1.55 && ratio <= 1.60) {
+            return ImageView.ScaleType.CENTER_CROP;
+        }
+
+        return ImageView.ScaleType.FIT_CENTER;
+    }
+
+    public static DBHelper.LoyaltyCardOrder getLoyaltyCardOrder(Context context) {
+        SharedPreferences sortPref = context.getSharedPreferences(
+                "sharedpreference_sort",
+                Context.MODE_PRIVATE
+        );
+
+        String orderString = sortPref.getString("sharedpreference_sort_order", null);
+
+        if (orderString != null) {
+            try {
+                return DBHelper.LoyaltyCardOrder.valueOf(orderString);
+            } catch (IllegalArgumentException ignored) {
+            }
+        }
+
+        return DBHelper.LoyaltyCardOrder.Alpha;
+    }
+
+    public static DBHelper.LoyaltyCardOrderDirection getLoyaltyCardOrderDirection(Context context) {
+        SharedPreferences sortPref = context.getSharedPreferences(
+                "sharedpreference_sort",
+                Context.MODE_PRIVATE
+        );
+
+        String orderDirectionString = sortPref.getString("sharedpreference_sort_direction", null);
+
+        if (orderDirectionString != null) {
+            try {
+                return DBHelper.LoyaltyCardOrderDirection.valueOf(orderDirectionString);
+            } catch (IllegalArgumentException ignored) {
+            }
+        }
+
+        return DBHelper.LoyaltyCardOrderDirection.Ascending;
     }
 }

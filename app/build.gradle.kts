@@ -1,46 +1,44 @@
 import com.android.build.gradle.internal.tasks.factory.dependsOn
-import com.github.spotbugs.snom.SpotBugsTask
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    id("com.android.application")
-    id("com.github.spotbugs")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.org.jetbrains.kotlin.plugin.compose)
 }
 
-spotbugs {
-    ignoreFailures.set(false)
-    setEffort("max")
-    excludeFilter.set(file("./config/spotbugs/exclude.xml"))
-    reportsDir.set(layout.buildDirectory.file("reports/spotbugs/").get().asFile)
+kotlin {
+    jvmToolchain(21)
 }
 
 android {
     namespace = "protect.card_locker"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "me.hackerchick.catima"
-        minSdk = 21
-        targetSdk = 34
-        versionCode = 146
-        versionName = "2.34.4"
+        minSdk = 23
+        targetSdk = 36
+        versionCode = 1006
+        versionName = "2.45.2"
 
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
 
-        resourceConfigurations += listOf("ar", "bg", "bn", "bn-rIN", "bs", "cs", "da", "de", "el-rGR", "en", "eo", "es", "es-rAR", "et", "fi", "fr", "gl", "he-rIL", "hi", "hr", "hu", "in-rID", "is", "it", "ja", "ko", "lt", "lv", "nb-rNO", "nl", "oc", "pl", "pt", "pt-rBR", "pt-rPT", "ro-rRO", "ru", "sk", "sl", "sr", "sv", "ta", "tr", "uk", "vi", "zh-rCN", "zh-rTW")
+        resourceConfigurations += listOf("ar", "be", "bg", "bn", "bn-rIN", "bs", "cs", "da", "de", "el-rGR", "en", "eo", "es", "es-rAR", "et", "fa", "fi", "fr", "gl", "he-rIL", "hi", "hr", "hu", "in-rID", "is", "it", "ja", "ko", "lt", "lv", "nb-rNO", "nl", "oc", "peo", "pl", "pt", "pt-rBR", "pt-rPT", "ro-rRO", "ru", "sk", "sl", "sr", "sv", "ta", "tr", "uk", "vi", "zh-rCN", "zh-rTW")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("boolean", "showDonate", "true")
         buildConfigField("boolean", "showRateOnGooglePlay", "false")
+        buildConfigField("boolean", "useAcraCrashReporter", "true")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android.txt"),
+                getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
@@ -51,6 +49,7 @@ android {
 
     buildFeatures {
         buildConfig = true
+        compose = true
         viewBinding = true
     }
 
@@ -60,12 +59,21 @@ android {
             dimension = "type"
             isDefault = true
         }
+        create("fdroidLegacy") {
+            dimension = "type"
+            versionNameSuffix = " (F-Droid)"
+            versionCode = defaultConfig.versionCode!! - 1
+        }
         create("gplay") {
             dimension = "type"
+            versionNameSuffix = " (Google)"
 
             // Google doesn't allow donation links
             buildConfigField("boolean", "showDonate", "false")
             buildConfigField("boolean", "showRateOnGooglePlay", "true")
+
+            // Google Play already sends crashes to the Google Play Console
+            buildConfigField("boolean", "useAcraCrashReporter", "false")
         }
     }
 
@@ -75,92 +83,115 @@ android {
         }
     }
 
-    compileOptions {
-        encoding = "UTF-8"
-
-        // Flag to enable support for the new language APIs
-        isCoreLibraryDesugaringEnabled = true
-
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
     sourceSets {
         getByName("test") {
             resources.srcDirs("src/test/res")
         }
     }
 
-    // Starting with Android Studio 3 Robolectric is unable to find resources.
-    // The following allows it to find the resources.
-    testOptions.unitTests.isIncludeAndroidResources = true
     tasks.withType<Test>().configureEach {
         testLogging {
             events("started", "passed", "skipped", "failed")
         }
     }
 
+    testOptions {
+        unitTests {
+            // Starting with Android Studio 3 Robolectric is unable to find resources.
+            // The following allows it to find the resources.
+            isIncludeAndroidResources = true
+            all {
+                // Needed on Java 17 and up
+                it.jvmArgs(
+                    "--add-opens=java.base/java.lang=ALL-UNNAMED",
+                    "--add-opens=java.base/java.util=ALL-UNNAMED",
+                    "--add-opens=java.base/java.io=ALL-UNNAMED",
+                    "--add-opens=java.base/java.net=ALL-UNNAMED",
+                    "--add-opens=java.base/java.security=ALL-UNNAMED",
+                    "--add-opens=java.base/java.text=ALL-UNNAMED",
+                    "--add-opens=java.base/jdk.internal.access=ALL-UNNAMED",
+                    "--add-opens=java.desktop/java.awt.font=ALL-UNNAMED",
+                    "--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+                )
+            }
+        }
+    }
+
     lint {
         lintConfig = file("lint.xml")
     }
-    kotlinOptions {
-        jvmTarget = "17"
+
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_21
+        }
+    }
+    compileOptions {
+        encoding = "UTF-8"
+
+        // Flag to enable support for the new language APIs
+        isCoreLibraryDesugaringEnabled = true
+
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 }
 
 dependencies {
+    implementation(project(":shared"))
+
     // AndroidX
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
-    implementation("androidx.core:core-ktx:1.15.0")
-    implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation("androidx.exifinterface:exifinterface:1.4.0")
-    implementation("androidx.palette:palette:1.0.0")
-    implementation("androidx.preference:preference:1.2.1")
-    implementation("com.google.android.material:material:1.12.0")
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+    implementation(libs.androidx.appcompat.appcompat)
+    implementation(libs.androidx.constraintlayout.constraintlayout)
+    implementation(libs.androidx.core.core.ktx)
+    implementation(libs.androidx.core.core.remoteviews)
+    implementation(libs.androidx.core.core.splashscreen)
+    implementation(libs.androidx.exifinterface.exifinterface)
+    implementation(libs.androidx.palette.palette)
+    implementation(libs.androidx.preference.preference)
+    implementation(libs.com.google.android.material.material)
+    coreLibraryDesugaring(libs.com.android.tools.desugar.jdk.libs)
+
+    // Compose
+    implementation(libs.androidx.activity.activity.compose)
+    val composeBom = platform(libs.androidx.compose.compose.bom)
+    implementation(composeBom)
+    implementation(libs.androidx.compose.foundation.foundation)
+    implementation(libs.androidx.compose.material3.material3)
+    implementation(libs.androidx.compose.material.material.icons.extended)
+    implementation(libs.androidx.compose.ui.ui.tooling.preview.android)
+    debugImplementation(libs.androidx.compose.ui.ui.test.manifest)
+
+    androidTestImplementation(composeBom)
+    androidTestImplementation(libs.androidx.compose.ui.ui.test.junit4)
 
     // Third-party
-    implementation("com.journeyapps:zxing-android-embedded:4.3.0@aar")
-    implementation("com.github.yalantis:ucrop:2.2.10")
-    implementation("com.google.zxing:core:3.5.3")
-    implementation("org.apache.commons:commons-csv:1.9.0")
-    implementation("com.jaredrummler:colorpicker:1.1.0")
-    implementation("net.lingala.zip4j:zip4j:2.11.5")
+    implementation(libs.com.journeyapps.zxing.android.embedded)
+    implementation(libs.com.github.yalantis.ucrop)
+    implementation(libs.com.google.zxing.core)
+    implementation(libs.org.apache.commons.commons.csv)
+    implementation(libs.com.jaredrummler.colorpicker)
+    implementation(libs.net.lingala.zip4j.zip4j)
 
-    // SpotBugs
-    implementation("io.wcm.tooling.spotbugs:io.wcm.tooling.spotbugs.annotations:1.0.0")
+    // Crash reporting
+    implementation(libs.bundles.acra)
 
     // Testing
-    val androidXTestVersion = "1.6.1"
-    val junitVersion = "4.13.2"
-    testImplementation("androidx.test:core:$androidXTestVersion")
-    testImplementation("junit:junit:$junitVersion")
-    testImplementation("org.robolectric:robolectric:4.14.1")
+    testImplementation(libs.androidx.test.core)
+    testImplementation(libs.junit.junit)
+    testImplementation(libs.org.robolectric.robolectric)
 
-    androidTestImplementation("androidx.test:core:$androidXTestVersion")
-    androidTestImplementation("junit:junit:$junitVersion")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.test:runner:$androidXTestVersion")
-    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-}
-
-tasks.withType<SpotBugsTask>().configureEach {
-    description = "Run spotbugs"
-    group = "verification"
-
-    //classes = fileTree("build/intermediates/javac/debug/compileDebugJavaWithJavac/classes")
-    //source = fileTree("src/main/java")
-    //classpath = files()
-
-    reports.maybeCreate("xml").required.set(false)
-    reports.maybeCreate("html").required.set(true)
+    androidTestImplementation(libs.bundles.androidx.test)
+    androidTestImplementation(libs.junit.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.rules)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.uiautomator.uiautomator)
+    androidTestImplementation(libs.androidx.test.espresso.espresso.core)
 }
 
 tasks.register("copyRawResFiles", Copy::class) {
     from(
-        layout.projectDirectory.file("../CHANGELOG.md"),
         layout.projectDirectory.file("../PRIVACY.md")
     )
     into(layout.projectDirectory.dir("src/main/res/raw"))
@@ -168,7 +199,7 @@ tasks.register("copyRawResFiles", Copy::class) {
 }.also {
     tasks.preBuild.dependsOn(it)
     tasks.getByName<Delete>("clean") {
-        val filesNamesToDelete = listOf("CHANGELOG", "PRIVACY")
+        val filesNamesToDelete = listOf("PRIVACY")
         filesNamesToDelete.forEach { fileName ->
             delete(layout.projectDirectory.file("src/main/res/raw/${fileName.lowercase()}.md"))
         }

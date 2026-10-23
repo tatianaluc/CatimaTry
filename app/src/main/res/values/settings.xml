@@ -12,30 +12,6 @@
         <item>@string/settings_dark_theme</item>
     </string-array>
 
-    <string-array name="color_values">
-        <item>@string/settings_key_system_theme</item>
-        <item>@string/settings_key_catima_theme</item>
-        <item>@string/settings_key_pink_theme</item>
-        <item>@string/settings_key_magenta_theme</item>
-        <item>@string/settings_key_violet_theme</item>
-        <item>@string/settings_key_blue_theme</item>
-        <item>@string/settings_key_sky_blue_theme</item>
-        <item>@string/settings_key_green_theme</item>
-        <item>@string/settings_key_brown_theme</item>
-    </string-array>
-
-    <string-array name="color_value_strings">
-        <item>@string/settings_system_theme</item>
-        <item>@string/settings_catima_theme</item>
-        <item>@string/settings_pink_theme</item>
-        <item>@string/settings_magenta_theme</item>
-        <item>@string/settings_violet_theme</item>
-        <item>@string/settings_blue_theme</item>
-        <item>@string/settings_sky_blue_theme</item>
-        <item>@string/settings_green_theme</item>
-        <item>@string/settings_brown_theme</item>
-    </string-array>
-
     <string-array name="column_count_portrait_values">
         <item>@string/settings_key_automatic_column_count</item>
         <item>1</item>
@@ -70,28 +46,6 @@
         <item>@string/settings_column_count_7</item>
     </string-array>
 
-    <string-array name="color_values_no_dynamic">
-        <item>@string/settings_key_system_theme</item>
-        <item>@string/settings_key_pink_theme</item>
-        <item>@string/settings_key_magenta_theme</item>
-        <item>@string/settings_key_violet_theme</item>
-        <item>@string/settings_key_blue_theme</item>
-        <item>@string/settings_key_sky_blue_theme</item>
-        <item>@string/settings_key_green_theme</item>
-        <item>@string/settings_key_brown_theme</item>
-    </string-array>
-
-    <string-array name="color_value_strings_no_dynamic">
-        <item>@string/settings_catima_theme</item>
-        <item>@string/settings_pink_theme</item>
-        <item>@string/settings_magenta_theme</item>
-        <item>@string/settings_violet_theme</item>
-        <item>@string/settings_blue_theme</item>
-        <item>@string/settings_sky_blue_theme</item>
-        <item>@string/settings_green_theme</item>
-        <item>@string/settings_brown_theme</item>
-    </string-array>
-
     <!--
       NB: this list needs to be updated manually for new/removed languages and
       is used to generate the locale lists in app/build.gradle and
@@ -99,8 +53,10 @@
     -->
     <string-array name="locale_values">
         <item />
+        <!-- <item>af</item> -->
         <item>ar</item>
         <!-- <item>ast</item> -->
+        <item>be</item>
         <item>bg</item>
         <item>bn</item>
         <item>bn-rIN</item>
@@ -116,10 +72,11 @@
         <item>es</item>
         <item>es-rAR</item>
         <item>et</item>
-        <!-- <item>fa</item> -->
+        <item>fa</item>
         <item>fi</item>
         <!-- <item>fil</item> -->
         <item>fr</item>
+        <!-- <item>fy</item> -->
         <item>gl</item>
         <item>he-rIL</item>
         <item>hi</item>
@@ -128,10 +85,12 @@
         <item>in-rID</item>
         <item>is</item>
         <item>it</item>
+        <!-- <item>iw</item> -->
         <item>ja</item>
         <!-- <item>kn</item> -->
         <item>ko</item>
         <!-- <item>lb</item> -->
+        <!-- <item>lmo</item> -->
         <item>lt</item>
         <item>lv</item>
         <!-- <item>ml</item> -->
@@ -139,6 +98,7 @@
         <item>nb-rNO</item>
         <item>nl</item>
         <item>oc</item>
+        <item>peo</item>
         <item>pl</item>
         <item>pt</item>
         <item>pt-rBR</item>
@@ -156,22 +116,6 @@
         <item>vi</item>
         <item>zh-rCN</item>
         <item>zh-rTW</item>
-    </string-array>
-
-    <string-array name="card_orientation_values">
-        <item>@string/settings_key_follow_system_orientation</item>
-        <item>@string/settings_key_follow_sensor_orientation</item>
-        <item>@string/settings_key_lock_on_opening_orientation</item>
-        <item>@string/settings_key_portrait_orientation</item>
-        <item>@string/settings_key_landscape_orientation</item>
-    </string-array>
-
-    <string-array name="card_orientation_values_strings">
-        <item>@string/settings_follow_system_orientation</item>
-        <item>@string/settings_follow_sensor_orientation</item>
-        <item>@string/settings_lock_on_opening_orientation</item>
-        <item>@string/settings_portrait_orientation</item>
-        <item>@string/settings_landscape_orientation</item>
     </string-array>
 
     <array name="letter_tile_colors">

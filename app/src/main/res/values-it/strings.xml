@@ -2,8 +2,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
     <string name="action_search">Cerca</string>
     <string name="action_add">Aggiungi</string>
-    <string name="noGiftCards">Premi il pulsante + per aggiungere una carta oppure importala dal menù ⋮.</string>
-    <string name="noMatchingGiftCards">Nessun risultato. Prova a cambiare la tua ricerca.</string>
+    <string name="noGiftCards">Premi il pulsante + per aggiungere una carta oppure importala dal menù ⋮</string>
+    <string name="noMatchingGiftCards">Nessun risultato. Prova a modificare la ricerca.</string>
     <string name="storeName">Nome</string>
     <string name="note">Note</string>
     <string name="cardId">Codice</string>
@@ -17,14 +17,14 @@
     <string name="sendLabel">Invia…</string>
     <string name="editCardTitle">Modifica carta</string>
     <string name="addCardTitle">Aggiungi carta</string>
-    <string name="scanCardBarcode">Scansiona il codice</string>
-    <string name="cardShortcut">Scorciatoia per la carta</string>
+    <string name="scanCardBarcode">Scansiona codice a barre</string>
+    <string name="cardShortcut">Scorciatoia carta</string>
     <string name="noCardsMessage">Aggiungi prima una carta</string>
     <string name="noCardExistsError">Impossibile trovare quella carta</string>
-    <string name="failedParsingImportUriError">Impossibile analizzare l\'URI di importazione</string>
-    <string name="importExport">Importa/Esporta</string>
+    <string name="failedParsingImportUriError">Impossibile processare l\'URI di importazione</string>
+    <string name="importExport">Importa/esporta</string>
     <string name="exportName">Esporta</string>
-    <string name="importExportHelp">Il backup dei dati permette di spostarli su un altro dispositivo.</string>
+    <string name="importExportHelp">Il backup dei dati permette di spostarli su un altro dispositivo</string>
     <string name="importSuccessfulTitle">Importato</string>
     <string name="importFailedTitle">Importazione fallita</string>
     <string name="importFailed">Impossibile eseguire l\'importazione</string>
@@ -34,11 +34,8 @@
     <string name="importing">Importazione in corso…</string>
     <string name="exporting">Esportazione in corso…</string>
     <string name="importOptionFilesystemTitle">Importa dall\'archivio</string>
-    <string name="importOptionFilesystemExplanation">Scegli un file dall\'archivio.</string>
+    <string name="importOptionFilesystemExplanation">Scegli un file specifico dal filesystem</string>
     <string name="importOptionFilesystemButton">Dall\'archivio</string>
-    <string name="importOptionApplicationTitle">Usa un\'altra app</string>
-    <string name="importOptionApplicationExplanation">Usa qualsiasi app o il tuo gestore di file preferito per aprire un file.</string>
-    <string name="importOptionApplicationButton">Usa un\'altra app</string>
     <string name="about">Informazioni</string>
     <string name="app_license">Software libero con copyleft, licenza GPLv3+</string>
     <string name="about_title_fmt">Informazioni su <xliff:g id="app_name">%s</xliff:g></string>
@@ -56,14 +53,14 @@
     <string name="importSuccessful">Dati importati</string>
     <string name="app_copyright_old">Basato su Loyalty Card Keychain
 \ncopyright © 2016–2020 Branden Archer</string>
-    <string name="exportOptionExplanation">I dati verranno scritti in una posizione a tua scelta.</string>
+    <string name="exportOptionExplanation">I dati verranno scritti nella posizione da te scelta</string>
     <string name="barcodeType">Tipo di codice a barre</string>
     <string name="unstar">Rimuovi dai preferiti</string>
     <string name="star">Aggiungi ai preferiti</string>
     <string name="starImage">Stella dei preferiti</string>
     <string name="deleteConfirmationGroup">Eliminare il gruppo\?</string>
     <string name="all">Tutti</string>
-    <string name="noGroups">Clicca sul pulsante + per aggiungere i gruppi per la categorizzazione.</string>
+    <string name="noGroups">Clicca sul pulsante + per aggiungere gruppi per la categorizzazione</string>
     <string name="groups">Gruppi</string>
     <string name="enter_group_name">Inserisci il nome del gruppo</string>
     <string name="groupsList">Gruppi: <xliff:g>%s</xliff:g></string>
@@ -72,7 +69,7 @@
     <string name="leaveWithoutSaveTitle">Esci</string>
     <string name="moveDown">Sposta in basso</string>
     <string name="moveUp">Sposta in alto</string>
-    <string name="failedOpeningFileManager">Installa prima un gestore di file.</string>
+    <string name="failedOpeningFileManager">Impossibile aprire un gestore di file</string>
     <string name="noBarcode">Nessun codice a barre</string>
     <plurals name="groupCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> carta</item>
@@ -97,17 +94,13 @@
     <string name="settings_disable_lockscreen_while_viewing_card">Impedisci il blocco dello schermo</string>
     <string name="accept">Accetta</string>
     <string name="privacy_policy">Informativa sulla riservatezza</string>
-    <string name="importVoucherVaultMessage">Seleziona il tuo file di esportazione <i>vouchervault.json</i> da Voucher Vault per importarlo.
-\nCrealo premendo prima Esporta in Voucher Vault.</string>
+    <string name="importVoucherVaultMessage">Seleziona il tuo file di esportazione da Voucher Vault per importarlo. \nCrealo premendo Esporta in Voucher Vault.</string>
     <string name="importVoucherVault">Importa da Voucher Vault</string>
-    <string name="importLoyaltyCardKeychainMessage">Seleziona il tuo file di esportazione <i>LoyaltyCardKeychain.csv</i> da Loyalty Card Keychain per importarlo.
-\nCrealo dal menù Importa/Esporta in Loyalty Card Keychain premendo prima su Esporta.</string>
+    <string name="importLoyaltyCardKeychainMessage">Seleziona il tuo file di esportazione da Loyalty Card Keychain per importarlo. \nCrealo dal menu Importa/Esporta in Loyalty Card Keychain premendo su Esporta.</string>
     <string name="importLoyaltyCardKeychain">Importa da Loyalty Card Keychain</string>
-    <string name="importFidmeMessage">Seleziona il tuo file di esportazione <i>fidme-export-request-xxxxxx.zip</i> da FidMe per importare e seleziona successivamente i tipi di codice a barre manualmente.
-\nCrealo dal tuo profilo FidMe scegliendo Protezione Dati e poi premendo Estrai i miei dati prima.</string>
+    <string name="importFidmeMessage">Seleziona il tuo file di esportazione da FidMe per importarlo, dopodiché seleziona i tipi di codice a barre manualmente. \nPer crearlo, si fa dal tuo profilo FidMe scegliendo \"Data Protection\" e poi \"Extract my data\".</string>
     <string name="importFidme">Importa da FidMe</string>
-    <string name="importCatimaMessage">Seleziona il file di esportazione <i>catima.zip</i> per importarlo.
-\nCrealo dal menù Importa/Esporta di un\'altra applicazione Catima premendo prima Esporta.</string>
+    <string name="importCatimaMessage">Seleziona il file di esportazione per importarlo. \nSi può creare dal menu Importa/esporta di un\'altra applicazione Catima premendo su Esporta.</string>
     <string name="importCatima">Importa da Catima</string>
     <string name="setBarcodeId">Imposta il valore del codice a barre</string>
     <string name="sameAsCardId">Uguale al codice</string>
@@ -117,8 +110,8 @@
     <string name="addFromImage">Seleziona un\'immagine dalla galleria</string>
     <string name="unsupportedBarcodeType">Questo tipo di codice a barre non può ancora essere visualizzato. Potrebbe essere supportato in una versione successiva dell\'applicazione.</string>
     <string name="wrongValueForBarcodeType">Il valore non è valido per il tipo di codice a barre selezionato</string>
-    <string name="app_resources">Risorse libere di terze parti: <xliff:g id="app_resources_list"> %s </xliff:g></string>
-    <string name="app_libraries">Librerie libere di terze parti: <xliff:g id="app_libraries_list"> %s </xliff:g></string>
+    <string name="app_resources">Risorse di terze parti: <xliff:g id="app_resources_list">%s</xliff:g></string>
+    <string name="app_libraries">Librerie di terze parti: <xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="intent_import_card_from_url_share_multiple_text">Voglio condividere alcune carte con te</string>
     <string name="no">No</string>
     <string name="yes">Sì</string>
@@ -131,13 +124,10 @@
     <string name="photos">Foto</string>
     <string name="backImageDescription">Immagine posteriore</string>
     <string name="frontImageDescription">Immagine frontale</string>
-    <string name="passwordRequired">Si prega di inserire la password</string>
-    <string name="importStocardMessage">Seleziona il tuo file di esportazione <i>***.zip</i> da Stocard per importarlo.
-\nOttienilo inviando un\'e-mail a support@stocardapp.com chiedendo un\'esportazione dei tuoi dati.</string>
-    <string name="importStocard">Importa da Stocard</string>
+    <string name="passwordRequired">Inserire la password</string>
     <string name="turn_flashlight_off">Spegni la torcia</string>
     <string name="turn_flashlight_on">Accendi la torcia</string>
-    <string name="failedGeneratingShareURL">Impossibile generare un URL condivisibile. Si prega di segnalarlo.</string>
+    <string name="failedGeneratingShareURL">Impossibile generare un URL da condividere</string>
     <plurals name="selectedCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> selezionata</item>
         <item quantity="many"><xliff:g>%d</xliff:g> selezionate</item>
@@ -157,26 +147,17 @@
     </plurals>
     <string name="settings_system_locale">Sistema</string>
     <string name="settings_locale">Lingua</string>
-    <string name="settings_brown_theme">Marrone</string>
-    <string name="settings_green_theme">Verde</string>
-    <string name="settings_sky_blue_theme">Azzurro</string>
-    <string name="settings_blue_theme">Blu</string>
-    <string name="settings_violet_theme">Viola</string>
-    <string name="settings_magenta_theme">Magenta</string>
-    <string name="settings_pink_theme">Rosa</string>
-    <string name="settings_catima_theme">Catima</string>
-    <string name="settings_theme_color">Colore del tema</string>
     <string name="app_contributors">Reso possibile da: <xliff:g id="app_contributors">%s</xliff:g></string>
     <string name="noGroupCards">Questo gruppo è vuoto</string>
     <string name="barcodeImageDescriptionWithType">Immagine del codice a barre in formato <xliff:g>%s</xliff:g></string>
     <string name="sort_by">Ordina per</string>
     <string name="reverse">…in ordine inverso</string>
     <string name="sort_by_expiry">Scadenza</string>
-    <string name="sort_by_most_recently_used">Usate più recentemente</string>
+    <string name="sort_by_most_recently_used">Le più recentemente utilizzate</string>
     <string name="sort_by_name">Nome</string>
     <string name="sort">Ordina</string>
     <string name="license">Licenza</string>
-    <string name="source_repository">Repository del codice sorgente</string>
+    <string name="source_repository">Repository dei sorgenti</string>
     <string name="on_github">su GitHub</string>
     <string name="exportPasswordHint">Inserisci la password</string>
     <string name="on_google_play">su Google Play</string>
@@ -189,7 +170,7 @@
     <string name="report_error">Segnala un errore</string>
     <string name="editGroup">Modifica del gruppo: <xliff:g>%s</xliff:g></string>
     <string name="group_name_is_empty">Il nome del gruppo non deve essere vuoto</string>
-    <string name="noGiftCardsGroup">Crea alcune carte e poi assegnale al gruppo qui.</string>
+    <string name="noGiftCardsGroup">Crea alcune carte e poi assegnale al gruppo qui</string>
     <string name="group_edit">Modifica il gruppo</string>
     <string name="group_name_already_in_use">Il nome del gruppo è già in uso</string>
     <string name="group_updated">Gruppo aggiornato</string>
@@ -207,17 +188,12 @@
     </plurals>
     <string name="settings_oled_dark">Sfondo nero puro per il tema scuro</string>
     <string name="include_if_asking_support">Se vuoi richiedere supporto, includi le seguenti informazioni:</string>
-    <string name="settings_card_orientation">Orientamento dello schermo</string>
-    <string name="settings_follow_system_orientation">Segui il sistema</string>
     <string name="duplicateCard">Duplica</string>
     <string name="archive">Archivia</string>
     <string name="unarchive">Disarchivia</string>
     <string name="unarchived">Carta non archiviata</string>
     <string name="archived">Carta archiviata</string>
-    <string name="settings_portrait_orientation">Verticale</string>
-    <string name="settings_landscape_orientation">Orizzontale</string>
-    <string name="settings_lock_on_opening_orientation">Blocca sull\'orientamento utilizzato all\'apertura della carta</string>
-    <string name="failedLaunchingPhotoPicker">Impossibile trovare un\'app galleria supportata</string>
+    <string name="failedLaunchingPhotoPicker">Impossibile trovare un selettore di immagini supportato</string>
     <plurals name="groupCardCountWithArchived">
         <item quantity="one"><xliff:g>%1$d</xliff:g> carta (<xliff:g id="archivedCount">%2$d</xliff:g> archiviata)</item>
         <item quantity="many"><xliff:g>%1$d</xliff:g> carte (<xliff:g id="archivedCount">%2$d</xliff:g> archiviate)</item>
@@ -228,8 +204,7 @@
     <string name="welcome">Benvenuti su Catima</string>
     <string name="failedToOpenUrl">Installa prima un browser web</string>
     <string name="failedToRetrieveImageFile">Impossibile ottenere il file dell\'immagine</string>
-    <string name="barcodeLongPressMessage">Si possono aprire solo immagini dell\'app della galleria</string>
-    <string name="cameraPermissionDeniedTitle">È impossibile accedere alla fotocamera</string>
+    <string name="cameraPermissionDeniedTitle">Impossibile accedere alla fotocamera</string>
     <string name="noCameraPermissionDirectToSystemSetting">Per poter scansionare i codici a barre, Catima ha bisogno di accedere alla tua fotocamera. Premi qui per poter cambiare le impostazioni dei permessi.</string>
     <string name="updateBalance">Aggiorna bilancio</string>
     <string name="updateBalanceTitle">Quanto hai speso o ricevuto?</string>
@@ -243,22 +218,20 @@
     <string name="chooseValidFromDate">Scegli la data di validità</string>
     <string name="validFromSentence">Valido da: <xliff:g>%s</xliff:g></string>
     <string name="anyDate">Qualsiasi data</string>
-    <string name="height">Altezza:</string>
+    <string name="height">Altezza</string>
     <string name="switchToFrontImage">Passa all\'immagine frontale</string>
     <string name="switchToBackImage">Passa all\'immagine dietro</string>
     <string name="switchToBarcode">Passa al codice a barre</string>
-    <string name="openFrontImageInGalleryApp">Apri l\'immagine frontale nell\'app Galleria</string>
     <string name="donate">Dona</string>
-    <string name="openBackImageInGalleryApp">Apri l\'immagine posteriore nell\'app Galleria</string>
     <string name="setBarcodeHeight">Imposta l\'altezza del codice a barre</string>
     <string name="icon_header_click_text">Premi a lungo per modificare l\'immagine</string>
     <string name="show_note">Mostra nota</string>
     <string name="show_balance">Mostra bilancio</string>
     <string name="show_validity">Mostra validità</string>
     <string name="show_name_below_image_thumbnail">Mostra il nome sotto l\'immagine</string>
-    <string name="permissionReadCardsLabel">Leggi le carte Catima</string>
-    <string name="settings_allow_content_provider_read_summary">Le applicazioni dovranno comunque richiedere l\'autorizzazione per ottenere l\'accesso</string>
-    <string name="settings_allow_content_provider_read_title">Consenti ad altre applicazioni di accedere ai miei dati</string>
+    <string name="permissionReadCardsLabel">Leggi Carte Catima</string>
+    <string name="settings_allow_content_provider_read_summary">Consente all\'app Gadgetbridge di sincronizzare le tue carte con gli orologi compatibili</string>
+    <string name="settings_allow_content_provider_read_title">Sincronizzare con Gadgetbridge</string>
     <string name="permissionReadCardsDescription">Leggere le sue carte e tutti i suoi dettagli, comprese le note e le immagini</string>
     <string name="settings_display_barcode_max_brightness_summary">Necessario per il funzionamento di alcuni scanner</string>
     <string name="settings_keep_screen_on_summary">Disattiva il timeout dello schermo durante la visualizzazione di una carta</string>
@@ -281,10 +254,9 @@
     <string name="addWithoutBarcode">Aggiungere una carta senza codice a barre</string>
     <string name="field_must_not_be_empty">Il campo non deve essere vuoto</string>
     <string name="app_name">Catima</string>
-    <string name="settings_follow_sensor_orientation">Ruota sempre (ignora le impostazioni di sistema)</string>
     <string name="add_manually_warning_title">Consigliata scansione</string>
     <string name="continue_">Successivo</string>
-    <string name="add_manually_warning_message">In alcuni negozi, il valore del codice a barre differisce dal numero scritto sulla carta. Per questo motivo, l\'inserimento manuale del codice a barre potrebbe non funzionare sempre. Si consiglia di scansionare il codice a barre con la fotocamera. Vuoi continuare lo stesso?</string>
+    <string name="add_manually_warning_message">Per alcune carte, il valore del codice a barre differisce dal numero scritto sulla carta. Per questo motivo, l\'inserimento manuale del codice a barre potrebbe non funzionare sempre. Per questo motivo si consiglia di scansionare il codice a barre con la fotocamera. Vuoi procedere lo stesso?</string>
     <string name="amountParsingFailed">Importo non valido</string>
     <string name="spend">Spendi</string>
     <string name="receive">Ricevi</string>
@@ -312,7 +284,65 @@
     <string name="settings_column_count_5">5</string>
     <string name="settings_category_title_cards_overview">Panoramica delle carte</string>
     <string name="unsupportedFile">Questo file non è supportato</string>
-    <string name="generic_error_please_retry">Siamo spiacenti, qualcosa è andato storto, riprova...</string>
-    <string name="addFromPkpass">Seleziona un file Passbook (.pkpass)</string>
+    <string name="generic_error_please_retry">Rilevato un errore</string>
+    <string name="addFromPkpass">Seleziona un file Passbook (.pkpass/.pkpasses)</string>
     <string name="sort_by_valid_from">Valido da</string>
+    <string name="setBarcodeWidth">Imposta larghezza del codice a barre</string>
+    <string name="width">Larghezza</string>
+    <string name="card_list_widget_name">Lista delle carte</string>
+    <string name="card_list_widget_empty">Dopo aver aggiunto alcune carte fedeltà in Catima, queste appariranno qui. Se hai delle carte, assicurati che non siano tutte archiviate.</string>
+    <string name="cardWithNumber">Carta <xliff:g>%d</xliff:g></string>
+    <string name="cardWithNumberAndLocale">Carta <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
+    <string name="acra_crash_email_subject"><xliff:g id="app_name">%s</xliff:g> rapporto sull\'incidente</string>
+    <string name="pleaseDoNotRotateTheDevice">Si prega di non ruotare il dispositivo, perché così si annullerà l\'azione</string>
+    <string name="acra_catima_has_crashed">Siamo spiacenti, ma <xliff:g id="app_name">%s</xliff:g> si è interrotta. Aiutaci a risolvere questo problema inviandoci un resoconto dell\'errore.</string>
+    <string name="acra_explain_crash">Se possibile, si prega di aggiungere ulteriori dettagli su quello che si stava facendo:</string>
+    <string name="pref_enable_acra">Chiedi di inviare resoconti di interruzioni anomale</string>
+    <string name="pref_enable_acra_summary">Quando attivo, ti verrà chiesto di inviare un resoconto dell\'interruzione quando avviene. I resoconti non sono mai inviati automaticamente.</string>
+    <string name="copy_value">Copia valore</string>
+    <string name="copied_to_clipboard">Copiato negli appunti</string>
+    <string name="nothing_to_copy">Nessun valore trovato</string>
+    <string name="barcodeEncoding">Codifica codici a barre</string>
+    <string name="back">Indietro</string>
+    <string name="settings_disable_nfc_while_viewing_card">Pausa NFC</string>
+    <string name="settings_disable_nfc_while_viewing_card_summary">Sospende la funzione NFC per impedire che i pagamenti NFC vengano attivati durante la visualizzazione di una carta</string>
+    <string name="nfc_blocked_while_viewing_card">La funzione NFC è disattivata</string>
+    <string name="change_settings">Modifica impostazioni</string>
+    <string name="nfc_block_system_error">Impossibile mettere in pausa l\'NFC</string>
+    <string name="sort_by_most_recently_added">Aggiunte più di recente</string>
+    <string name="show_card_id">Mostra ID carta</string>
+    <string name="zoomFrontImage">Zoom immagine fronte</string>
+    <string name="zoomBackImage">Zoom immagine retro</string>
+    <string name="open_in_gallery">Apri nella galleria immagini</string>
+    <string name="open_settings">Apri le impostazioni</string>
+    <string name="settings_wear_sync">Sincronizzare con Wear OS</string>
+    <string name="android_blocked_startup">Android ha bloccato l\'avvio del servizio Wear OS</string>
+    <string name="settings_wear_sync_summary">Consente all\'app complementare Wear OS di leggere le tue carte tramite Bluetooth</string>
+    <string name="wear_sync_permission_required">Catima ha bisogno delle autorizzazioni che hai negato per sincronizzarsi con il tuo smartwatch Wear OS</string>
+    <string name="settings_wear_sync_devices">Dispositivi con sistema operativo Wear OS consentiti</string>
+    <string name="settings_wear_sync_devices_summary">Gestisci i dispositivi autorizzati alla sincronizzazione tramite Bluetooth</string>
+    <string name="settings_wear_sync_no_devices">Nessun dispositivo consentito</string>
+    <string name="settings_wear_sync_blocked_devices">Dispositivi con sistema operativo Wear OS bloccati</string>
+    <string name="settings_wear_sync_blocked_devices_summary">Gestisci i dispositivi Wear OS bloccati</string>
+    <string name="settings_wear_sync_no_blocked_devices">Nessun dispositivo bloccato</string>
+    <string name="settings_wear_sync_unpair_title">Rimuovere il dispositivo?</string>
+    <string name="settings_wear_sync_unpair_message">Rimuovere <xliff:g>%1$s</xliff:g> da Catima? Non sarà più possibile sincronizzare le tue carte.</string>
+    <string name="settings_wear_sync_unblock_message">Rimuovere <xliff:g>%1$s</xliff:g> dall\'elenco bloccato? Sarà possibile richiedere nuovamente l\'accesso.</string>
+    <string name="settings_wear_sync_unpair">Eliminare</string>
+    <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>\n%2$s</xliff:g>)</string>
+    <string name="settings_wear_sync_tap_to_remove">Tocca un dispositivo per rimuoverlo.</string>
+    <string name="wear_bt_pairing_channel_name">Accoppiamento dispositivo Wear OS</string>
+    <string name="wear_bt_pairing_title">Il dispositivo Wear OS deve sincronizzarsi</string>
+    <string name="wear_bt_pairing_message">Consentire a <xliff:g>%1$s</xliff:g> di accedere alle tue carte?</string>
+    <string name="wear_bt_pairing_allow">Consenti</string>
+    <string name="wear_bt_pairing_block">Blocca</string>
+    <string name="wear_bt_pairing_allowed">Ora è consentita la sincronizzazione di <xliff:g>%1$s</xliff:g>.</string>
+    <string name="wear_bt_pairing_blocked"><xliff:g>%1$s</xliff:g> è stato bloccato.</string>
+    <string name="wear_bt_pairing_mismatch_title">Nuova richiesta di autorizzazione da <xliff:g>%1$s</xliff:g></string>
+    <string name="wear_bt_pairing_mismatch_message">Questo dispositivo era precedentemente autorizzato ma ora presenta un token di identità diverso. Ciò accade quando l\'app Wear OS viene reinstallata o i suoi dati vengono cancellati. Può anche indicare un tentativo di spoofing MAC Bluetooth.\nAccetta solo se hai reinstallato di recente l\'app Catima Wear OS su questo orologio.</string>
+    <string name="wear_bt_channel_name">Wear OS companion app</string>
+    <string name="wear_bt_notification_title">Sincronizzazione di Catima Wear OS attiva</string>
+    <string name="settings_category_title_smartwatch">Supporto per smartwatch</string>
+    <string name="wear_bt_failed_foreground_notification_title">Impossibile avviare il servizio di sincronizzazione di Wear OS</string>
+    <string name="wear_bt_critical_error_channel_name">Wear OS errore critico sincronizzazione</string>
 </resources>

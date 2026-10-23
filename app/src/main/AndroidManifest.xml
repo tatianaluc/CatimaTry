@@ -4,7 +4,7 @@
 
     <permission
         android:description="@string/permissionReadCardsDescription"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/ic_launcher_monochrome"
         android:label="@string/permissionReadCardsLabel"
         android:name="${applicationId}.READ_CARDS"
         android:protectionLevel="dangerous" />
@@ -12,8 +12,18 @@
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="23" />
 
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -30,6 +40,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:localeConfig="@xml/locales_config">
+        
+        <receiver
+            android:name=".ListWidget"
+            android:label="@string/card_list_widget_name"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/list_widget_info" />
+         </receiver>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -51,6 +75,7 @@
                 <data android:mimeType="application/vnd.apple.pkpass" />
                 <data android:mimeType="application/vnd-com.apple.pkpass" />
                 <data android:mimeType="application/vnd.espass-espass" />
+                <data android:mimeType="application/vnd.apple.pkpasses" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -62,6 +87,7 @@
                 <data android:mimeType="application/vnd.apple.pkpass" />
                 <data android:mimeType="application/vnd-com.apple.pkpass" />
                 <data android:mimeType="application/vnd.espass-espass" />
+                <data android:mimeType="application/vnd.apple.pkpasses" />
             </intent-filter>
         </activity>
         <activity
@@ -75,10 +101,14 @@
         <activity
             android:name=".ManageGroupActivity"
             android:label="@string/group_edit"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".LoyaltyCardViewActivity"
+            android:name=".cardview.LoyaltyCardViewActivity"
             android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".cardimageview.LoyaltyCardImageViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoyaltyCardEditActivity"
@@ -127,12 +157,11 @@
             android:name=".preferences.SettingsActivity"
             android:label="@string/settings"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!-- FIXME: locked screenOrientation is a workaround for https://github.com/CatimaLoyalty/Android/issues/1715, remove when https://github.com/CatimaLoyalty/Android/issues/513 is fixed -->
+        <!-- FIXME: ImportExportActivity cancels import on rotation -->
         <activity
             android:name=".ImportExportActivity"
             android:label="@string/importExport"
             android:exported="true"
-            android:screenOrientation="locked"
             android:theme="@style/AppTheme.NoActionBar">
 
             <!-- ZIP Intent Filter -->
@@ -203,5 +232,26 @@
                 <action android:name="android.service.controls.ControlsProviderService" />
             </intent-filter>
         </service>
+
+        <service
+            android:name=".wearos.BluetoothServerService"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice" />
+
+        <activity
+            android:name=".wearos.BluetoothPairingActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <receiver
+            android:name=".wearos.BluetoothPairingReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="protect.card_locker.wearos.action.ALLOW_DEVICE" />
+                <action android:name="protect.card_locker.wearos.action.BLOCK_DEVICE" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

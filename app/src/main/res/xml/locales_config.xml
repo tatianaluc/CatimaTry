@@ -2,6 +2,7 @@
 <locale-config xmlns:android="http://schemas.android.com/apk/res/android">
     <locale android:name="en-US" />
     <locale android:name="ar" />
+    <locale android:name="be" />
     <locale android:name="bg" />
     <locale android:name="bn" />
     <locale android:name="bn-IN" />
@@ -14,6 +15,7 @@
     <locale android:name="es" />
     <locale android:name="es-AR" />
     <locale android:name="et" />
+    <locale android:name="fa" />
     <locale android:name="fi" />
     <locale android:name="fr" />
     <locale android:name="gl" />
@@ -31,6 +33,7 @@
     <locale android:name="nb-NO" />
     <locale android:name="nl" />
     <locale android:name="oc" />
+    <locale android:name="peo" />
     <locale android:name="pl" />
     <locale android:name="pt" />
     <locale android:name="pt-BR" />

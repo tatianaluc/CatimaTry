@@ -1,4 +1,5 @@
 name: Generate feature graphic
+
 on:
   workflow_dispatch:
   push:
@@ -7,29 +8,20 @@ on:
     paths:
       - 'fastlane/**/title.txt'
       - '.scripts/generate_feature_graphic/**'
+
 permissions:
-  actions: none
-  checks: none
   contents: write
-  deployments: none
-  discussions: none
-  id-token: none
-  issues: none
-  packages: none
-  pages: none
   pull-requests: write
-  repository-projects: none
-  security-events: none
-  statuses: none
+
 jobs:
   generate-feature-graphic:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4.2.2
+    - uses: actions/checkout@v7.0.1
     - name: Install requirements
       run: |
         sudo apt-get update
-        sudo apt-get install imagemagick mat2 optipng
+        sudo apt-get install inkscape mat2 optipng xvfb
         # Install 200 weight versions of relevant Noto (to use for languages not supported by Lexend Deca)
         sudo apt-get install fonts-noto-extra fonts-noto-cjk-extra
         # Custom fonts
@@ -39,7 +31,7 @@ jobs:
     - name: Generate featureGraphic.png for each language
       run: .scripts/generate_feature_graphic/generate_feature_graphic.sh
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v7.0.7
+      uses: peter-evans/create-pull-request@v8.1.1
       with:
         title: "Update feature graphic"
         commit-message: "Update feature graphic"

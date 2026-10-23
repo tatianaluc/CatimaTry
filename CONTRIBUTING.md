@@ -23,22 +23,56 @@ for good reason.
 
 ## Code Changes
 
+### LLM ("AI") and coding agents
+
+**Note:** submitting LLM ("AI") generated code is strongly discouraged, as such
+code is often (subtly) incorrect or overcomplicated (for example: unnecessarily
+pulling in extra libraries for functionality already covered by existing
+libraries). It also often makes unrelated changes that increase the risk of
+introducing new issues and complicates reviewing. Even when it doesn't do any
+of the before mentioned things, it will often not fit the coding style and flow
+of existing code, requiring excessive refactoring.
+
+While we cannot ever control or be sure if LLMs were used to generate the
+submitted code, it is your responsibility to ensure that whatever code you
+submit is correct and fits within the design of existing code. It is never
+acceptable to defend a change by stating a LLM suggested it.
+
+This is a personal plea more than anything: please understand that writing code
+is the easy part. The hard part is making sure the code fits the design of the
+rest of the application and is maintainable. Reviewing is a very time-consuming
+task for this reason. Please do not use LLMs to quickly generate a "fix" and
+moving the cost of labor to me as a reviewer. If you do use LLMs to generate
+part of your code, please be open about this, explain what was generated how
+and how you confirmed and refactored the code to fit the project and minimized
+risk.
+
+Please never submit LLM-generated code as-is.
+
+### Kotlin and Compose migration
+
+Catima uses a lot of "legacy" tech, Java, Android XML. This will be ported to Kotlin,
+then Jetpack Compose; for further details, see
+<https://github.com/CatimaLoyalty/Android/issues/2483>.
+
+Thus, prefer Kotlin and Jetpack Compose for new code/UI where practical, especially new files/features.
+
 ### Test Your Code
 
-There are four possible tests you can run to verify your code.  The first
+There are three possible tests you can run to verify your code.  The first
 is unit tests, which check the basic functionality of the application, and
 can be run by gradle using:
 
-    # ./gradlew testReleaseUnitTest
+```sh
+./gradlew testFossDebugUnitTest
+```
 
-The second and third check for common problems using static analysis.
-These are the Android lint checker, run using:
+The second checks for common problems using static analysis.
+This is the Android lint checker, run using:
 
-    # ./gradlew lintRelease
-
-and SpotBugs, run using:
-
-    # ./gradlew spotbugsRelease
+```sh
+./gradlew lintFossRelease
+```
 
 The final check is by testing the application on a live device and verifying
 the basic functionality works as expected.

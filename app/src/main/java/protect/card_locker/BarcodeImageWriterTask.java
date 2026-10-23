@@ -4,17 +4,27 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.util.ArrayMap;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
+import com.google.zxing.common.StringUtils;
 
 import java.lang.ref.WeakReference;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
+import java.util.Objects;
 
 import protect.card_locker.async.CompatCallable;
 
@@ -39,6 +49,7 @@ public class BarcodeImageWriterTask implements CompatCallable<Bitmap> {
     private final WeakReference<TextView> textViewReference;
     private String cardId;
     private final CatimaBarcode format;
+    private final Charset encoding;
     private final int imageHeight;
     private final int imageWidth;
     private final int imagePadding;
@@ -46,10 +57,10 @@ public class BarcodeImageWriterTask implements CompatCallable<Bitmap> {
     private final boolean showFallback;
     private final BarcodeImageWriterResultCallback callback;
 
-    BarcodeImageWriterTask(
+    public BarcodeImageWriterTask(
             Context context, ImageView imageView, String cardIdString,
-            CatimaBarcode barcodeFormat, TextView textView,
-            boolean showFallback, BarcodeImageWriterResultCallback callback, boolean roundCornerPadding
+            CatimaBarcode barcodeFormat, @NonNull Charset barcodeEncoding, TextView textView,
+            boolean showFallback, BarcodeImageWriterResultCallback callback, boolean roundCornerPadding, boolean isFullscreen
     ) {
         mContext = context;
 
@@ -62,6 +73,7 @@ public class BarcodeImageWriterTask implements CompatCallable<Bitmap> {
 
         cardId = cardIdString;
         format = barcodeFormat;
+        encoding = barcodeEncoding;
 
         int imageViewHeight = imageView.getHeight();
         int imageViewWidth = imageView.getWidth();
@@ -86,13 +98,13 @@ public class BarcodeImageWriterTask implements CompatCallable<Bitmap> {
 
         if (format.isSquare()) {
             imageHeight = imageWidth = Math.min(imageViewHeight, Math.min(MAX_WIDTH, imageViewWidth));
-        } else if (imageView.getWidth() < MAX_WIDTH) {
+        } else if (imageView.getWidth() < MAX_WIDTH && !isFullscreen) {
             imageHeight = imageViewHeight;
             imageWidth = imageViewWidth;
         } else {
             // Scale down the image to reduce the memory needed to produce it
-            imageWidth = MAX_WIDTH;
-            double ratio = (double) MAX_WIDTH / (double) imageViewWidth;
+            imageWidth = Math.min(MAX_WIDTH, this.mContext.getResources().getDisplayMetrics().widthPixels);
+            double ratio = (double) imageWidth / (double) imageViewWidth;
             imageHeight = (int) (imageViewHeight * ratio);
         }
 
@@ -172,10 +184,32 @@ public class BarcodeImageWriterTask implements CompatCallable<Bitmap> {
         }
 
         MultiFormatWriter writer = new MultiFormatWriter();
+
+        Map<EncodeHintType, Object> encodeHints = new ArrayMap<>();
+        // We don't want to pass the ISO-8859-1 as an encoding hint as zxing may add this as ECI
+        // inside the barcode.
+        //
+        // Due to many barcode scanners in the wild being badly coded they may trip over ECI
+        // info existing and fail to scan.
+        // See:
+        // - https://github.com/CatimaLoyalty/Android/issues/2921
+        // - https://github.com/CatimaLoyalty/Android/issues/2932
+        //
+        // Just not always passing the encoding hint is slightly hacky, but in 5+ years of Catima
+        // cards without encode hints have never caused any issues (unless they were UTF-8), yet
+        // just days after passing ISO-8859-1 as CHARACTER_SET in the encode hints already 2
+        // scan failures were reported (one for QR, one for Aztec).
+        if (!Objects.equals(encoding.name(), StandardCharsets.ISO_8859_1.name())) {
+            Log.d(TAG, "Chosen encoding is not ISO_8859_1, so passing as encoding hint");
+            encodeHints.put(EncodeHintType.CHARACTER_SET, encoding);
+        } else {
+            Log.d(TAG, "Not passing encoding as encoding hint");
+        }
+
         BitMatrix bitMatrix;
         try {
             try {
-                bitMatrix = writer.encode(cardId, format.format(), imageWidth, imageHeight, null);
+                bitMatrix = writer.encode(cardId, format.format(), imageWidth, imageHeight, encodeHints);
             } catch (Exception e) {
                 // Cast a wider net here and catch any exception, as there are some
                 // cases where an encoder may fail if the data is invalid for the

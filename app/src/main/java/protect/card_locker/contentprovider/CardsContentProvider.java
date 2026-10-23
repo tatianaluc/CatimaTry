@@ -32,7 +32,7 @@ public class CardsContentProvider extends ContentProvider {
         public static final String MAJOR_COLUMN = "major";
         public static final String MINOR_COLUMN = "minor";
         public static final int MAJOR = 1;
-        public static final int MINOR = 0;
+        public static final int MINOR = 1;
     }
 
     private static final int URI_VERSION = 0;
@@ -52,6 +52,7 @@ public class CardsContentProvider extends ContentProvider {
             LoyaltyCardDbIds.CARD_ID,
             LoyaltyCardDbIds.BARCODE_ID,
             LoyaltyCardDbIds.BARCODE_TYPE,
+            LoyaltyCardDbIds.BARCODE_ENCODING,
             LoyaltyCardDbIds.STAR_STATUS,
             LoyaltyCardDbIds.LAST_USED,
             LoyaltyCardDbIds.ARCHIVE_STATUS,
@@ -76,13 +77,6 @@ public class CardsContentProvider extends ContentProvider {
                         @Nullable final String selection,
                         @Nullable final String[] selectionArgs,
                         @Nullable final String sortOrder) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            // Disable the content provider on SDK < 23 since it grants dangerous
-            // permissions at install-time
-            Log.w(TAG, "Content provider read is only available for SDK >= 23");
-            return null;
-        }
-
         final Settings settings = new Settings(getContext());
         if (!settings.getAllowContentProviderRead()) {
             Log.w(TAG, "Content provider read is disabled");
